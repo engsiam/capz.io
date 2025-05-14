@@ -39,9 +39,11 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-orange-500"
+            className="text-4xl md:text-8xl font-bold mb-6 text-white"
           >
-            Connecting Visionaries with Capital
+            {/* bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-orange-500 */}
+            Connecting <span className="text-stroke-white">Visionaries</span>{" "}
+            with Capital
           </motion.h1>
 
           <motion.p

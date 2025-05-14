@@ -386,13 +386,14 @@ export default function Home() {
         ref={sectionRefs.whyCapZ}
         className="relative w-full h-screen overflow-hidden bg-gradient-to-b from-transparent to-gray-900/40"
       >
-        <div className="absolute inset-0 w-full h-full z-0">
+
+        <div className="absolute inset-0 w-full h-full -z-[-1]">
           <video
             autoPlay
             muted
             loop
             playsInline
-            className="absolute right-0 top-0 h-full object-cover"
+            className="absolute -left-22rem top-0 h-ful w-full object-cover"
             style={{ width: "100%" }} // You can set to "50%" if you want it on just half screen
           >
             <source
@@ -401,8 +402,8 @@ export default function Home() {
             />
             Your browser does not support the video tag.
           </video>
-        </div>
-        <div className="max-w-6xl mx-auto">
+       
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">
               Why Choose CapZ
@@ -541,9 +542,10 @@ export default function Home() {
             />
           </div>
         </div>
+        </div>
       </section>
 
-      {/* Mentorship Spotlight */}
+      {/* Mentorship Spotlight
       <section ref={sectionRefs.mentors} className="py-24 px-4 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -583,7 +585,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Metrics & Progress */}
       <section

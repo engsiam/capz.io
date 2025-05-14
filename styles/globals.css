@@ -10,6 +10,10 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  .text-stroke-white {
+    -webkit-text-stroke: 2px white;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 @layer base {

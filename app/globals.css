@@ -140,3 +140,8 @@ html {
   height: 100%;
   transform: translate(-50%, -50%) scale(1.5); /* Initial scale to cover the container */
 }
+
+.text-stroke-white {
+  -webkit-text-stroke: 2px white;
+  -webkit-text-fill-color: transparent;
+}
