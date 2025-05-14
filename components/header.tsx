@@ -1,48 +1,75 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import Image from "next/image"
-import { useState, useEffect } from "react"
-import { Menu, X } from "lucide-react"
-import ThemeToggle from "./theme-toggle"
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import ThemeToggle from "./theme-toggle";
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
-    }
+      setIsScrolled(window.scrollY > 10);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-black/80 backdrop-blur-sm border-b border-gray-800" : "bg-transparent"
+        isScrolled
+          ? "bg-black/80 backdrop-blur-sm border-b border-gray-800"
+          : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/logo.png" alt="CapZ Logo" width={100} height={30} priority className="w-auto h-8 md:h-10" />
+            <Image
+              src="/logo.png"
+              alt="CapZ Logo"
+              width={100}
+              height={30}
+              priority
+              className="w-auto h-8 md:h-10"
+            />
           </Link>
 
           <div className="flex items-center gap-4">
             <nav className="hidden md:flex items-center gap-6">
-              <Link href="/projects" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
+              <Link
+                href="/"
+                className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+              >
+                Home
+              </Link>
+              <Link
+                href="/projects"
+                className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+              >
                 Startups
               </Link>
-              <Link href="/investors" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
+              <Link
+                href="/investors"
+                className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+              >
                 Investors
               </Link>
-              <Link href="/mentors" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
+              <Link
+                href="/mentors"
+                className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+              >
                 Mentors
               </Link>
-              <Link href="/about" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
+              <Link
+                href="/about"
+                className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+              >
                 About
               </Link>
             </nav>
@@ -65,14 +92,21 @@ export default function Header() {
 
             <div className="flex md:hidden items-center gap-4">
               <ThemeToggle />
-              <Link href="/login" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
+              <Link
+                href="/login"
+                className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+              >
                 Login
               </Link>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="flex items-center justify-center size-10 text-gray-300"
               >
-                {mobileMenuOpen ? <X className="size-6" /> : <Menu className="size-6" />}
+                {mobileMenuOpen ? (
+                  <X className="size-6" />
+                ) : (
+                  <Menu className="size-6" />
+                )}
               </button>
             </div>
           </div>
@@ -132,5 +166,5 @@ export default function Header() {
         )}
       </div>
     </header>
-  )
+  );
 }
