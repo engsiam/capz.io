@@ -1,172 +1,233 @@
-"use client"
-
-import Link from "next/link"
-import Image from "next/image"
+"use client";
+import { siteConfig } from "@/config/site";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-black border-t border-gray-800">
-      <div className="container px-4 py-12 mx-auto">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-          <div>
-            <Link href="/" className="inline-block mb-6">
-              <Image src="/logo.png" alt="CapZ Logo" width={150} height={45} className="w-auto h-10" />
+    <footer className="bg-gray-900/50 border-t border-gray-800 py-12 mt-auto">
+      <div className="container mx-auto px-4 max-w-6xl flex flex-col min-h-[200px]">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 flex-grow">
+          {/* Company Info */}
+          <div className="col-span-1 md:col-span-1">
+            <Link href="/" className="inline-block mb-4">
+              <Image src="/logo.png" alt="CapZ" width={120} height={40} />
             </Link>
-            <p className="max-w-md text-gray-400">
-              Connecting visionary entrepreneurs with strategic investors and mentors to build the future together.
+            <p className="text-gray-400 mb-4">
+              Connecting visionaries with capital - where groundbreaking
+              startups meet strategic investors.
             </p>
-            <div className="flex mt-6 space-x-6">
-              <Link href="#" className="text-gray-400 hover:text-cyan-400">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="size-5"
-                >
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                </svg>
-                <span className="sr-only">Facebook</span>
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-cyan-400">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="size-5"
-                >
-                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-                </svg>
-                <span className="sr-only">Twitter</span>
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-cyan-400">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="size-5"
-                >
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                </svg>
-                <span className="sr-only">Instagram</span>
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-cyan-400">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="size-5"
-                >
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                  <rect width="4" height="12" x="2" y="9" />
-                  <circle cx="4" cy="4" r="2" />
-                </svg>
-                <span className="sr-only">LinkedIn</span>
-              </Link>
-            </div>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
-            <div>
-              <h3 className="text-sm font-semibold tracking-wider text-white uppercase">Platform</h3>
-              <ul className="mt-4 space-y-4">
-                <li>
-                  <Link href="/projects" className="text-gray-400 hover:text-cyan-400">
-                    Startups
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/investors" className="text-gray-400 hover:text-cyan-400">
-                    Investors
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/mentors" className="text-gray-400 hover:text-cyan-400">
-                    Mentorship
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/events" className="text-gray-400 hover:text-cyan-400">
-                    Events
-                  </Link>
-                </li>
-              </ul>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-lg font-bold mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/about"
+                  className="text-gray-400 hover:text-cyan-400 transition-colors"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/projects"
+                  className="text-gray-400 hover:text-cyan-400 transition-colors"
+                >
+                  Startups
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/investors"
+                  className="text-gray-400 hover:text-cyan-400 transition-colors"
+                >
+                  For Investors
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/mentors"
+                  className="text-gray-400 hover:text-cyan-400 transition-colors"
+                >
+                  Mentors
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h3 className="text-lg font-bold mb-4">Resources</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/blog"
+                  className="text-gray-400 hover:text-cyan-400 transition-colors"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/faq"
+                  className="text-gray-400 hover:text-cyan-400 transition-colors"
+                >
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-gray-400 hover:text-cyan-400 transition-colors"
+                >
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/support"
+                  className="text-gray-400 hover:text-cyan-400 transition-colors"
+                >
+                  Support
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Connect */}
+          <div>
+            <h3 className="text-lg font-bold mb-4">Connect</h3>
+            <div className="space-y-2 text-gray-400">
+              <p className="flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 mr-2 text-cyan-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+                <a
+                  href="tel:+15645447312"
+                  className="hover:text-cyan-400 transition-colors"
+                >
+                  +1 (564) 544-7312
+                </a>
+              </p>
+              <p className="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 mr-2 text-cyan-400 mt-1 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                <span>
+                  0 N GOULD ST 41866 WY, Sheridan, WY, United States, 82801
+                </span>
+              </p>
             </div>
-            <div>
-              <h3 className="text-sm font-semibold tracking-wider text-white uppercase">Company</h3>
-              <ul className="mt-4 space-y-4">
-                <li>
-                  <Link href="/about" className="text-gray-400 hover:text-cyan-400">
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog" className="text-gray-400 hover:text-cyan-400">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/careers" className="text-gray-400 hover:text-cyan-400">
-                    Careers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="text-gray-400 hover:text-cyan-400">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold tracking-wider text-white uppercase">Legal</h3>
-              <ul className="mt-4 space-y-4">
-                <li>
-                  <Link href="/privacy" className="text-gray-400 hover:text-cyan-400">
-                    Privacy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/terms" className="text-gray-400 hover:text-cyan-400">
-                    Terms
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/cookies" className="text-gray-400 hover:text-cyan-400">
-                    Cookies
-                  </Link>
-                </li>
-              </ul>
+            {/* socila media iocns */}
+            <div className="flex space-x-4 my-6">
+              <a
+                href={siteConfig.links.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="size-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-cyan-500 hover:text-white transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                </svg>
+              </a>
+              <a
+                href={siteConfig.links.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="size-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-cyan-500 hover:text-white transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+              </a>
+              <a
+                href="#"
+                className="size-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-cyan-500 hover:text-white transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
-        <div className="pt-8 mt-8 border-t border-gray-800">
-          <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} CapZ. All rights reserved.</p>
+
+        {/* Legal Links */}
+        <div className="border-t border-gray-800 mt-8 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="text-sm text-gray-500 mb-4 md:mb-0 text-center md:text-left">
+              © {new Date().getFullYear()} {siteConfig.name}. All rights
+              reserved.
+            </div>
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
+              <Link
+                href="/privacy"
+                className="hover:text-cyan-400 transition-colors"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/terms"
+                className="hover:text-cyan-400 transition-colors"
+              >
+                Terms of Service
+              </Link>
+              <Link
+                href="/cookies"
+                className="hover:text-cyan-400 transition-colors"
+              >
+                Cookie Policy
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }

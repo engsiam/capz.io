@@ -60,12 +60,12 @@ export default function Header() {
               >
                 Investors
               </Link>
-              <Link
+              {/* <Link
                 href="/mentors"
                 className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
               >
                 Mentors
-              </Link>
+              </Link> */}
               <Link
                 href="/about"
                 className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
