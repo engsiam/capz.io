@@ -1,10 +1,10 @@
-import type React from "react"
-import "./globals.css"
-import type { Metadata } from "next"
-import { ThemeProvider } from "@/context/theme-context"
-import { siteConfig } from "@/config/site"
-import Header from "@/components/header"
-import Footer from "@/components/footer"
+import Footer from "@/components/footer";
+import Header from "@/components/header";
+import { siteConfig } from "@/config/site";
+import { ThemeProvider } from "@/context/theme-context";
+import type { Metadata } from "next";
+import type React from "react";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
@@ -12,13 +12,16 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-    generator: 'Capz Descriptin'
-}
+  generator: "Capz Description",
+  icons: {
+    icon: "/favicon.png", 
+  },
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -47,5 +50,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
