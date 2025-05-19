@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Image from "next/image"
-import Link from "next/link"
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutPage() {
   return (
@@ -17,10 +17,11 @@ export default function AboutPage() {
           <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-orange-500">
             About CapZ
           </h1>
-          <p className="text-lg max-w-3xl mx-auto text-gray-300">
-            Our mission is to transform how early-stage companies access funding by creating transparent connections
-            between bold entrepreneurs and forward-thinking investors.
-          </p>
+          {/* <p className="text-lg max-w-3xl mx-auto text-gray-300">
+            Our mission is to transform how early-stage companies access funding
+            by creating transparent connections between bold entrepreneurs and
+            forward-thinking investors.
+          </p> */}
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
@@ -32,18 +33,23 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold mb-6 text-white">Our Story</h2>
             <div className="space-y-4 text-gray-300">
               <p>
-                CapZ was founded in 2022 by a team of entrepreneurs and investors who experienced firsthand the
-                challenges of connecting promising startups with the right capital partners.
+                Welcome to CapZ, where visions meet capital. We are a platform
+                designed for growth and impact. Our goal is simple: connect
+                great projects with smart investors. We see ourselves as an
+                ecosystem, providing more than just funding.
               </p>
               <p>
-                After successfully raising funding for their own ventures and later becoming investors themselves, our
-                founders identified a critical gap in the market: the lack of a transparent, efficient platform that
-                could match innovative startups with aligned investors while providing the mentorship needed to maximize
-                success.
+                Our mission is to make turning bold ideas into reality easier.
+                We also help investors find promising opportunities. We believe
+                in a quality-first approach. Every project is carefully
+                reviewed. This benefits visionaries by placing them in a select
+                group. It helps investors find high-potential ventures.
               </p>
               <p>
-                Today, CapZ has grown into a comprehensive ecosystem that has helped over 250 startups raise more than
-                $75 million in funding, with a network of 120+ active mentors providing guidance along the way.
+                Transparency is key to everything we do. We provide clear
+                connections and support. We offer mentorship and resources to
+                help projects succeed. Join our community dedicated to mutual
+                success. We are building the future of funding, together.
               </p>
             </div>
           </motion.div>
@@ -74,7 +80,9 @@ export default function AboutPage() {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="mb-20"
         >
-          <h2 className="text-3xl font-bold mb-10 text-center text-white">Our Values</h2>
+          <h2 className="text-3xl font-bold mb-10 text-center text-white">
+            Our Values
+          </h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-cyan-500/30 transition-colors duration-300">
               <div className="size-14 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 flex items-center justify-center mb-4">
@@ -85,13 +93,19 @@ export default function AboutPage() {
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
                 </svg>
               </div>
               <h3 className="text-xl font-bold mb-2">Innovation First</h3>
               <p className="text-gray-400">
-                We believe in the power of innovation to solve the world's most pressing challenges. We prioritize
-                startups that bring fresh perspectives and disruptive solutions.
+                We believe in the power of innovation to solve the world's most
+                pressing challenges. We prioritize startups that bring fresh
+                perspectives and disruptive solutions.
               </p>
             </div>
 
@@ -114,8 +128,9 @@ export default function AboutPage() {
               </div>
               <h3 className="text-xl font-bold mb-2">Meaningful Connections</h3>
               <p className="text-gray-400">
-                We create purposeful connections between entrepreneurs and investors based on shared values, vision, and
-                complementary expertise, not just financial metrics.
+                We create purposeful connections between entrepreneurs and
+                investors based on shared values, vision, and complementary
+                expertise, not just financial metrics.
               </p>
             </div>
 
@@ -138,8 +153,9 @@ export default function AboutPage() {
               </div>
               <h3 className="text-xl font-bold mb-2">Transparency & Trust</h3>
               <p className="text-gray-400">
-                We foster an environment of complete transparency in all interactions, ensuring that both entrepreneurs
-                and investors can make informed decisions with confidence.
+                We foster an environment of complete transparency in all
+                interactions, ensuring that both entrepreneurs and investors can
+                make informed decisions with confidence.
               </p>
             </div>
           </div>
@@ -151,7 +167,9 @@ export default function AboutPage() {
           transition={{ duration: 0.5, delay: 0.8 }}
           className="mb-20"
         >
-          <h2 className="text-3xl font-bold mb-10 text-center text-white">Leadership Team</h2>
+          <h2 className="text-3xl font-bold mb-10 text-center text-white">
+            Leadership Team
+          </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
@@ -178,7 +196,12 @@ export default function AboutPage() {
                 className="bg-gray-900/50 border border-gray-800 rounded-xl overflow-hidden hover:border-cyan-500/30 transition-colors duration-300"
               >
                 <div className="relative h-64">
-                  <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
+                  <Image
+                    src={member.image || "/placeholder.svg"}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold">{member.name}</h3>
@@ -196,10 +219,13 @@ export default function AboutPage() {
           transition={{ duration: 0.5, delay: 1 }}
           className="text-center"
         >
-          <h2 className="text-3xl font-bold mb-6 text-white">Join Our Mission</h2>
+          <h2 className="text-3xl font-bold mb-6 text-white">
+            Join Our Mission
+          </h2>
           <p className="text-lg max-w-3xl mx-auto text-gray-300 mb-8">
-            Whether you're an entrepreneur with a groundbreaking idea, an investor looking for the next big opportunity,
-            or an industry expert interested in mentoring, we invite you to join the CapZ community.
+            Whether you're an entrepreneur with a groundbreaking idea, an
+            investor looking for the next big opportunity, or an industry expert
+            interested in mentoring, we invite you to join the CapZ community.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -218,5 +244,5 @@ export default function AboutPage() {
         </motion.div>
       </div>
     </main>
-  )
+  );
 }

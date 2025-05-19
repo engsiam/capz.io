@@ -4,10 +4,10 @@ import AnimatedCounter from "@/components/animated-counter";
 import { FeatureCard } from "@/components/feature-card";
 import HeroSection from "@/components/hero-section";
 import { HowItWorksStep } from "@/components/how-it-works-step";
-import { MentorCard } from "@/components/mentor-card";
 import { StartupCard } from "@/components/startup-card";
 import VideoSection from "@/components/video-section";
 import { useTheme } from "@/context/theme-context";
+import { featuredStartups, metrics } from "@/src/data/data";
 import { useScroll, useTransform } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -20,75 +20,6 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-// Sample data for featured startups
-const featuredStartups = [
-  {
-    id: 1,
-    name: "NeuralTech",
-    logo: "/placeholder.svg?height=80&width=80",
-    description: "AI-driven data analytics for enterprise",
-    fundingStage: "Series A",
-    raised: "$5.2M",
-  },
-  {
-    id: 2,
-    name: "CloudSecure",
-    logo: "/placeholder.svg?height=80&width=80",
-    description: "Zero-trust security for cloud infrastructure",
-    fundingStage: "Seed",
-    raised: "$1.8M",
-  },
-  {
-    id: 3,
-    name: "GreenFinance",
-    logo: "/placeholder.svg?height=80&width=80",
-    description: "Sustainable investment platform",
-    fundingStage: "Series B",
-    raised: "$12M",
-  },
-  {
-    id: 4,
-    name: "HealthBridge",
-    logo: "/placeholder.svg?height=80&width=80",
-    description: "Remote patient monitoring solutions",
-    fundingStage: "Seed",
-    raised: "$2.5M",
-  },
-];
-
-// Sample data for mentors
-const mentors = [
-  {
-    id: 1,
-    name: "Alex Morgan",
-    role: "Former CTO at TechGiants",
-    image: "/placeholder.svg?height=150&width=150",
-    quote: "Building the right team is everything in early-stage startups.",
-  },
-  {
-    id: 2,
-    name: "Sarah Chen",
-    role: "Venture Partner at Future Fund",
-    image: "/placeholder.svg?height=150&width=150",
-    quote: "Focus on solving real problems and the funding will follow.",
-  },
-  {
-    id: 3,
-    name: "Michael Johnson",
-    role: "Serial Entrepreneur, 3 Exits",
-    image: "/placeholder.svg?height=150&width=150",
-    quote: "Resilience and adaptability determine long-term success.",
-  },
-];
-
-// Sample data for metrics
-const metrics = [
-  { label: "Startups Funded", value: 250, suffix: "+" },
-  { label: "Total Investment", value: 75, prefix: "$", suffix: "M" },
-  { label: "Successful Exits", value: 28 },
-  { label: "Active Mentors", value: 120, suffix: "+" },
-];
-
 export default function Home() {
   const { theme } = useTheme();
   const sectionRefs = {
@@ -99,11 +30,12 @@ export default function Home() {
     mentors: useRef(null),
     metrics: useRef(null),
     cta: useRef(null),
-    video: useRef(null),
+    video: useRef<HTMLVideoElement | null>(null),
   };
 
   const { scrollYProgress } = useScroll();
   const parallaxY = useTransform(scrollYProgress, [0, 1], [0, -300]);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const setupAnimations = () => {
@@ -181,6 +113,29 @@ export default function Home() {
           },
           "-=0.4"
         );
+      // 🔥 VIDEO PLAY ON SCROLL
+      if (!videoRef.current) return;
+
+      ScrollTrigger.create({
+        trigger: videoRef.current,
+        start: "top 80%",
+        end: "bottom 20%",
+        onUpdate: (self) => {
+          const direction = self.direction; // 1 = down, -1 = up
+          if (!videoRef.current) return;
+
+          if (self.isActive) {
+            if (direction === 1 && videoRef.current.paused) {
+              videoRef.current.play();
+            } else if (direction === -1 && !videoRef.current.paused) {
+              videoRef.current.pause();
+            }
+          } else {
+            videoRef.current.pause();
+          }
+        },
+        markers: false, // for debugging set to true
+      });
       // Ensure ScrollTrigger calculates correct layout
       ScrollTrigger.refresh();
     };
@@ -211,19 +166,18 @@ export default function Home() {
               </h2>
               <div className="space-y-6">
                 <p className="text-lg about-content">
-                  CapZ is more than a venture capital platform. We're a complete
-                  ecosystem designed to connect innovative startups with the
-                  capital, mentorship, and resources they need to succeed.
+                  It's a complete ecosystem for innovation. Not just a funding
+                  source. For visionaries, get capital and support. Access
+                  resources to make your plan real.
                 </p>
                 <p className="text-lg about-content">
-                  Our mission is to transform how early-stage companies access
-                  funding by creating transparent connections between bold
-                  entrepreneurs and forward-thinking investors.
+                  Investors, find promising ventures. Discover where to invest
+                  wisely. We create open connections for funding.
                 </p>
               </div>
             </div>
-            <div className="about-content relative">
-              <div className="rounded-xl overflow-hidden aspect-video bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-800 p-1">
+            <div className="about-content">
+              {/* <div className="rounded-xl overflow-hidden aspect-video bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-800 p-1">
                 <div className="w-full h-full rounded-lg overflow-hidden bg-gray-900 relative flex items-center justify-center">
                   <div className="absolute inset-0 opacity-20">
                     <div className="absolute top-[20%] left-[20%] w-32 h-32 bg-cyan-500 rounded-full filter blur-3xl"></div>
@@ -249,12 +203,23 @@ export default function Home() {
                     <h3 className="text-xl font-bold mb-2">
                       Accelerating Innovation
                     </h3>
-                    <p className="text-gray-400">
+                    <p className="text-white">
                       We've helped 250+ startups connect with investors and
                       raise over $75M in funding
                     </p>
                   </div>
                 </div>
+              </div> */}
+              <div className="overflow-hidden relative">
+                <video
+                  ref={videoRef}
+                  className="h2-chip-video"
+                  muted
+                  playsInline
+                  preload="none"
+                  aria-label="The brand-new H2 chip."
+                  src="/videos/large.mp4"
+                />
               </div>
             </div>
           </div>
@@ -269,11 +234,11 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">
-              How CapZ Works
+              How we work
             </h2>
             <p className="text-lg max-w-3xl mx-auto text-gray-300">
-              A streamlined process connecting entrepreneurs with investors
-              through our proven platform
+              Our simple process gets results. It links great ideas to smart
+              capital.
             </p>
           </div>
 
@@ -386,7 +351,6 @@ export default function Home() {
         ref={sectionRefs.whyCapZ}
         className="relative w-full h-screen overflow-hidden bg-gradient-to-b from-transparent to-gray-900/40"
       >
-
         <div className="absolute inset-0 w-full h-full -z-[-1]">
           <video
             autoPlay
@@ -402,146 +366,146 @@ export default function Home() {
             />
             Your browser does not support the video tag.
           </video>
-       
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">
-              Why Choose CapZ
-            </h2>
-            <p className="text-lg max-w-3xl mx-auto text-gray-300">
-              We offer a comprehensive platform designed to maximize success for
-              both startups and investors
-            </p>
+
+          <div className="max-w-6xl mx-auto relative z-10">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">
+                Why Choose CapZ
+              </h2>
+              <p className="text-lg max-w-3xl mx-auto text-gray-300">
+                We offer a comprehensive platform designed to maximize success
+                for both startups and investors
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <FeatureCard
+                icon={
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-10 w-10"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                    />
+                  </svg>
+                }
+                title="Expert Mentorship"
+                description="Access to industry leaders who provide guidance, feedback, and connections to help your startup succeed."
+              />
+
+              <FeatureCard
+                icon={
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-10 w-10"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                    />
+                  </svg>
+                }
+                title="Secure Environment"
+                description="State-of-the-art data protection and confidentiality for all startup information and investor communications."
+              />
+
+              <FeatureCard
+                icon={
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-10 w-10"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                }
+                title="Global Network"
+                description="Connect with investors and partners from around the world, expanding your reach and opportunities."
+              />
+
+              <FeatureCard
+                icon={
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-10 w-10"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                    />
+                  </svg>
+                }
+                title="Due Diligence Tools"
+                description="Comprehensive analytics and evaluation tools to make informed investment decisions quickly."
+              />
+
+              <FeatureCard
+                icon={
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-10 w-10"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                }
+                title="Accelerated Growth"
+                description="Resources and partnerships to help startups scale rapidly after securing funding."
+              />
+
+              <FeatureCard
+                icon={
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-10 w-10"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                    />
+                  </svg>
+                }
+                title="Community Support"
+                description="Join a thriving community of entrepreneurs and investors sharing knowledge and opportunities."
+              />
+            </div>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <FeatureCard
-              icon={
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-10 w-10"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
-                  />
-                </svg>
-              }
-              title="Expert Mentorship"
-              description="Access to industry leaders who provide guidance, feedback, and connections to help your startup succeed."
-            />
-
-            <FeatureCard
-              icon={
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-10 w-10"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                  />
-                </svg>
-              }
-              title="Secure Environment"
-              description="State-of-the-art data protection and confidentiality for all startup information and investor communications."
-            />
-
-            <FeatureCard
-              icon={
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-10 w-10"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              }
-              title="Global Network"
-              description="Connect with investors and partners from around the world, expanding your reach and opportunities."
-            />
-
-            <FeatureCard
-              icon={
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-10 w-10"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
-                  />
-                </svg>
-              }
-              title="Due Diligence Tools"
-              description="Comprehensive analytics and evaluation tools to make informed investment decisions quickly."
-            />
-
-            <FeatureCard
-              icon={
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-10 w-10"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
-              }
-              title="Accelerated Growth"
-              description="Resources and partnerships to help startups scale rapidly after securing funding."
-            />
-
-            <FeatureCard
-              icon={
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-10 w-10"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-              }
-              title="Community Support"
-              description="Join a thriving community of entrepreneurs and investors sharing knowledge and opportunities."
-            />
-          </div>
-        </div>
         </div>
       </section>
 

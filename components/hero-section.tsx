@@ -39,11 +39,10 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl md:text-8xl font-bold mb-6 text-white"
+            className="text-4xl md:text-9xl font-bold mb-6 text-white"
           >
             {/* bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-orange-500 */}
-            Connecting <span className="text-stroke-white">Visionaries</span>{" "}
-            with Capital
+            Your Vision <span className="text-stroke-white">Funded </span> Here
           </motion.h1>
 
           <motion.p
@@ -52,8 +51,9 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-lg md:text-xl mb-10 max-w-3xl mx-auto text-white"
           >
-            The platform where groundbreaking startups meet strategic investors.
-            We're transforming how innovation gets funded.
+            Have a solid project? We find the capital. Turn your detailed plan
+            real. Investors, access quality opportunities. Your money works hard
+            for you.
           </motion.p>
 
           <motion.div
@@ -72,7 +72,7 @@ export default function HeroSection() {
               href="/entrepreneurs/submit"
               className="px-8 py-3 rounded-full bg-transparent border-2 border-white font-medium text-lg hover:border-cyan-500 hover:text-cyan-400 transition-all duration-300 transform hover:-translate-y-1"
             >
-              Submit Startup
+              Submit Your Dream Plan
             </Link>
           </motion.div>
         </div>
