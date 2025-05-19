@@ -216,7 +216,7 @@ export default function Home() {
                   className="h2-chip-video"
                   muted
                   playsInline
-                  preload="none"
+                  preload="auto"
                   aria-label="The brand-new H2 chip."
                   src="https://res.cloudinary.com/davhgjfvj/video/upload/v1747676223/vlrj8l1ktwchcfef86ao.mp4"
                 />
