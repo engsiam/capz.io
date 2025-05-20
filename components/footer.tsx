@@ -219,7 +219,7 @@ export default function Footer() {
                 Terms of Service
               </Link>
               <Link
-                href="/cookies"
+                href="/CookiesPolicy"
                 className="hover:text-cyan-400 transition-colors"
               >
                 Cookie Policy
