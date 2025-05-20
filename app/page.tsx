@@ -217,7 +217,7 @@ export default function Home() {
                   muted
                   autoPlay
                   playsInline
-                  preload="none"
+                  preload="auto"
                   aria-label="The brand-new H2 chip."
                   src="//res.cloudinary.com/davhgjfvj/video/upload/v1747676223/vlrj8l1ktwchcfef86ao.mp4"
                 />
