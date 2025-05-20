@@ -218,8 +218,12 @@ export default function Home() {
                   playsInline
                   preload="none"
                   aria-label="The brand-new H2 chip."
-                  src="//res.cloudinary.com/davhgjfvj/video/upload/v1747676223/vlrj8l1ktwchcfef86ao.mp4"
-                />
+                >
+                  <source
+                    src="https://res.cloudinary.com/davhgjfvj/video/upload/v1747676223/vlrj8l1ktwchcfef86ao.mp4"
+                    type="video/mp4"
+                  />
+                </video>
               </div>
             </div>
           </div>
