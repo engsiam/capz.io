@@ -16,7 +16,7 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 // Register GSAP plugins
-if (typeof window !== "undefined" && gsap && ScrollTrigger) {
+if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
@@ -215,16 +215,12 @@ export default function Home() {
                   ref={videoRef}
                   className="h2-chip-video"
                   muted
-                  playsInline
                   autoPlay
+                  playsInline
                   preload="none"
                   aria-label="The brand-new H2 chip."
-                >
-                  <source
-                    src="https://res.cloudinary.com/davhgjfvj/video/upload/v1747676223/vlrj8l1ktwchcfef86ao.mp4"
-                    type="video/mp4"
-                  />
-                </video>
+                  src="//res.cloudinary.com/davhgjfvj/video/upload/v1747676223/vlrj8l1ktwchcfef86ao.mp4"
+                />
               </div>
             </div>
           </div>
