@@ -16,7 +16,7 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 // Register GSAP plugins
-if (typeof window !== "undefined") {
+if (typeof window !== "undefined" && gsap && ScrollTrigger) {
   gsap.registerPlugin(ScrollTrigger);
 }
 
