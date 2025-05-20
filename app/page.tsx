@@ -216,6 +216,7 @@ export default function Home() {
                   className="h2-chip-video"
                   muted
                   playsInline
+                  autoPlay
                   preload="none"
                   aria-label="The brand-new H2 chip."
                 >
