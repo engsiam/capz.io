@@ -219,7 +219,7 @@ export default function Home() {
                   playsInline
                   preload="auto"
                   aria-label="The brand-new H2 chip."
-                  src="//res.cloudinary.com/davhgjfvj/video/upload/v1747799961/capz_djooqd.mp4"
+                  src="//res.cloudinary.com/davhgjfvj/video/upload/v1747803512/capz-d_jnlepd.mp4"
                 />
               </div>
             </div>
