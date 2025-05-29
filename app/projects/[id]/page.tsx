@@ -8,8 +8,6 @@ import { Share2, Heart, ArrowLeft, Download, ExternalLink } from "lucide-react"
 
 export default function ProjectPage({ params }: { params: { id: string } }) {
   const [isInterested, setIsInterested] = useState(false)
-
-  // Dummy project data based on ID
   const project = {
     id: params.id,
     name: "NeuralTech AI",

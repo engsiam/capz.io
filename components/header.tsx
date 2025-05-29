@@ -41,34 +41,34 @@ export default function Header() {
           </Link>
 
           <div className="flex items-center gap-4">
-            <nav className="hidden md:flex items-center gap-6">
+            <nav className="hidden md:flex items-center gap-6 uppercase">
               <Link
                 href="/"
-                className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+                className="text-md font-medium text-white hover:text-white transition-colors"
               >
                 Home
               </Link>
               <Link
                 href="/projects"
-                className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+                className="text-md font-medium text-white hover:text-white transition-colors"
               >
                 Startups
               </Link>
               <Link
                 href="/investors"
-                className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+                className="text-md font-medium text-white hover:text-white transition-colors"
               >
                 Investors
               </Link>
               {/* <Link
                 href="/mentors"
-                className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+                className="text-md font-medium text-white hover:text-white transition-colors"
               >
                 Mentors
               </Link> */}
               <Link
                 href="/about"
-                className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+                className="text-md font-medium text-white hover:text-white transition-colors"
               >
                 About
               </Link>
@@ -78,7 +78,7 @@ export default function Header() {
               <ThemeToggle />
               <Link
                 href="/login"
-                className="text-sm font-medium text-gray-300 hover:text-white transition-colors px-4 py-2 border border-gray-800 rounded-full hover:border-cyan-500"
+                className="text-md font-medium text-white hover:text-white transition-colors px-4 py-2 border border-gray-800 rounded-full hover:border-cyan-500"
               >
                 Log In
               </Link>

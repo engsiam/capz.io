@@ -1,11 +1,15 @@
 "use client";
-
 import AnimatedCounter from "@/components/animated-counter";
 import { FeatureCard } from "@/components/feature-card";
+import FlagshipSlider from "@/components/FlagshipSlider";
 import HeroSection from "@/components/hero-section";
 import { HowItWorksStep } from "@/components/how-it-works-step";
+import ScrollFloat from "@/components/ScrollFloat";
+import ScrollRevealText from "@/components/ScrollRevealText";
 import { StartupCard } from "@/components/startup-card";
+import VerticalVideoSlider from "@/components/VerticalSlider";
 import VideoSection from "@/components/video-section";
+import VideoCollaps from "@/components/VideoCollaps";
 import { useTheme } from "@/context/theme-context";
 import { featuredStartups, metrics } from "@/src/data/data";
 import { useScroll, useTransform } from "framer-motion";
@@ -13,7 +17,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // Register GSAP plugins
 if (typeof window !== "undefined") {
@@ -36,6 +40,8 @@ export default function Home() {
   const { scrollYProgress } = useScroll();
   const parallaxY = useTransform(scrollYProgress, [0, 1], [0, -300]);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const textRef = useRef(null);
+  const [isHighlighted, setIsHighlighted] = useState(false);
 
   useEffect(() => {
     const setupAnimations = () => {
@@ -118,24 +124,38 @@ export default function Home() {
 
       ScrollTrigger.create({
         trigger: videoRef.current,
+        start: "top 40%",
+        end: "bottom 40%",
+        onUpdate: (self) => {
+          const video = videoRef.current;
+          if (!video) return;
+
+          if (self.isActive) {
+            if (self.direction === 1 && video.paused) {
+              video.play();
+            } else if (self.direction === -1 && !video.paused) {
+              video.pause();
+            }
+          } else {
+            video.pause();
+          }
+        },
+        markers: false,
+      });
+
+      //text aniamtion
+      if (!textRef.current) return;
+
+      const scrollTrigger = ScrollTrigger.create({
+        trigger: textRef.current,
         start: "top 80%",
         end: "bottom 20%",
         onUpdate: (self) => {
-          const direction = self.direction; // 1 = down, -1 = up
-          if (!videoRef.current) return;
-
-          if (self.isActive) {
-            if (direction === 1 && videoRef.current.paused) {
-              videoRef.current.play();
-            } else if (direction === -1 && !videoRef.current.paused) {
-              videoRef.current.pause();
-            }
-          } else {
-            videoRef.current.pause();
-          }
+          setIsHighlighted(self.isActive);
         },
-        markers: false, // for debugging set to true
+        markers: false,
       });
+
       // Ensure ScrollTrigger calculates correct layout
       ScrollTrigger.refresh();
     };
@@ -164,16 +184,38 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold mb-6 about-content bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-600">
                 About CapZ
               </h2>
-              <div className="space-y-6">
-                <p className="text-lg about-content">
-                  It's a complete ecosystem for innovation. Not just a funding
+              <div className="space-y-6 video-text text-xl">
+                {/* <ScrollRevealText
+                  text="It's a complete ecosystem for innovation. Not just a funding
+                  source. For visionaries, get capital and support. Access
+                  resources to make your plan real."
+                /> */}
+                {/* <ScrollRevealText
+                  text="Investors, find promising ventures. Discover where to invest
+                  wisely. We create open connections for funding."
+                /> */}
+                <ScrollFloat
+                  animationDuration={1}
+                  ease="back.inOut(2)"
+                  scrollStart="center bottom+=50%"
+                  scrollEnd="bottom bottom-=40%"
+                  stagger={0.03}
+                >
+                It's a complete ecosystem for innovation. Not just a funding
                   source. For visionaries, get capital and support. Access
                   resources to make your plan real.
-                </p>
-                <p className="text-lg about-content">
+                  </ScrollFloat>
+                <ScrollFloat
+                  animationDuration={1}
+                  ease="back.inOut(2)"
+                  scrollStart="center bottom+=50%"
+                  scrollEnd="bottom bottom-=40%"
+                  stagger={0.03}
+                >
+                  
                   Investors, find promising ventures. Discover where to invest
                   wisely. We create open connections for funding.
-                </p>
+                </ScrollFloat>
               </div>
             </div>
             <div className="about-content">
@@ -210,16 +252,31 @@ export default function Home() {
                   </div>
                 </div>
               </div> */}
-              <div className="overflow-hidden relative">
+              <div
+                className="overflow-hidden relative"
+                onMouseEnter={() => {
+                  const video = videoRef.current;
+                  if (!video) return;
+                  video.currentTime = 0;
+                  video.play();
+                }}
+                onMouseLeave={() => {
+                  const video = videoRef.current;
+                  if (!video) return;
+                  // Don't pause immediately — let it finish naturally
+                  video.onended = () => {
+                    video.currentTime = 0;
+                  };
+                }}
+              >
                 <video
                   ref={videoRef}
                   className="h2-chip-video"
                   muted
-                  autoPlay
                   playsInline
                   preload="auto"
                   aria-label="The brand-new H2 chip."
-                  src="//res.cloudinary.com/davhgjfvj/video/upload/v1747803512/capz-d_jnlepd.mp4"
+                  src="//res.cloudinary.com/davhgjfvj/video/upload/v1748441612/z_ktnfn9.mp4"
                 />
               </div>
             </div>
@@ -230,7 +287,7 @@ export default function Home() {
       {/* How It Works Section */}
       <section
         ref={sectionRefs.howItWorks}
-        className="py-24 px-4 relative bg-gradient-to-b from-transparent to-gray-900/40"
+        className="py-24 px-4 relative bg-gray-900/50 border-t border-gray-800"
       >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -245,7 +302,7 @@ export default function Home() {
 
           <div className="grid lg:grid-cols-2 gap-8 mt-12">
             <div>
-              <h3 className="text-2xl font-bold mb-8 text-center text-cyan-400">
+              <h3 className="text-2xl font-bold mb-8 text-left text-cyan-400">
                 For Entrepreneurs
               </h3>
               <div className="space-y-12">
@@ -280,7 +337,7 @@ export default function Home() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold mb-8 text-center text-blue-400">
+              <h3 className="text-2xl font-bold mb-8 text-left text-blue-400">
                 For Investors
               </h3>
               <div className="space-y-12">
@@ -692,7 +749,18 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      {/* video Slider */}
+      <section className="py-24 px-4 relative bg-gradient-to-b from-transparent to-gray-900/40">
+        <FlagshipSlider />
+      </section>
+      {/* vertical Slider */}
+      <section className="py-24 px-4 relative bg-gradient-to-b from-transparent to-gray-900/40">
+        <VerticalVideoSlider />
+      </section>
+      {/* video Slider collaps & expanded */}
+      <section className="py-24 px-4 relative bg-gradient-to-b from-transparent to-gray-900/40">
+        <VideoCollaps />
+      </section>
       {/* Dual Call to Action */}
       <section ref={sectionRefs.cta} className="py-24 px-4 relative">
         <div className="max-w-6xl mx-auto">
