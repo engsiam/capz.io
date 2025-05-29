@@ -202,6 +202,7 @@ const LightningBackground = ({
         opacity: 0.4,
         backgroundColor: "transparent !important",
         display: "block",
+        transform: `translateY(${scrollY * 0.1}px)`, 
       }}
     />
   );

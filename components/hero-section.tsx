@@ -23,6 +23,10 @@ export default function HeroSection() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [scrollY]);
 
+    // Calculate a parallax offset for lightning background
+  // Adjust multiplier to control speed/direction
+  const parallaxOffset = scrollY * 0.3; 
+
   return (
     <div ref={heroRef} className="relative h-screen w-full overflow-hidden">
       {/* Fixed hero content */}
@@ -89,7 +93,7 @@ export default function HeroSection() {
           willChange: "transform",
         }}
       >
-        <LightningBackground />
+         <LightningBackground xOffset={parallaxOffset} />
         <img
           src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Background"

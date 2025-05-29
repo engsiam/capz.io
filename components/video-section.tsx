@@ -55,7 +55,7 @@ export default function VideoSection() {
             Featured Video
           </h2>
           <p className="text-lg max-w-3xl mx-auto text-gray-300">
-            Explore the world's largest video game store and discover amazing
+            Explore the world's largest Cpaz office and discover amazing
             retro treasures
           </p>
         </motion.div>
@@ -85,13 +85,13 @@ export default function VideoSection() {
           {/* Content overlay */}
           <div className="absolute bottom-0 left-0 right-0 z-20 p-6 text-white">
             <h3 className="text-2xl font-bold mb-2">
-              I went to America's Largest Video Game Store
+              I went to cpaZ Largest Office
             </h3>
             <p className="text-gray-300 mb-4">
-              Phoenix Resale • 579K views • 1 year ago
+              capZ • 579K views • 1 year ago
             </p>
             <Link
-              href="https://www.youtube.com/watch?v=4cO36g0x5GU"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium hover:shadow-lg hover:shadow-cyan-500/20 transition-all"
