@@ -72,7 +72,7 @@ export default function GlobalOperations() {
           Global operations
         </h1>
         <p className="text-gray-300 text-base md:text-lg">
-          NEXT Group is a team of 450 people from diverse backgrounds, operating
+          cpaZ is a team of 450 people from diverse backgrounds, operating
           from 5 different countries, including UAE, Malaysia, Bangladesh, Sri
           Lanka & Cyprus.
         </p>
