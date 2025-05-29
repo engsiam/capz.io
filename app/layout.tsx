@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/context/theme-context";
 import type { Metadata } from "next";
 import type React from "react";
 import "./globals.css";
-import BlobCursor from "@/components/BlobCursor";
+
 
 export const metadata: Metadata = {
   title: {
@@ -42,7 +42,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-black text-white antialiased">
-        <BlobCursor />
+        
         <ThemeProvider>
           <div className="relative flex min-h-screen flex-col">
             <Header />
