@@ -1,10 +1,11 @@
 "use client";
 
+import LightningBackground from "@/components/Lightning";
 import { useTheme } from "@/context/theme-context";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import HyperspeedBackground from "@/components/HyperspeedBackground";
+import HyperspeedBackground from "./HyperspeedBackground";
 
 export default function HeroSection() {
   const [scrollY, setScrollY] = useState(0);
@@ -24,7 +25,6 @@ export default function HeroSection() {
 
   return (
     <div ref={heroRef} className="relative h-screen w-full overflow-hidden">
-      
       {/* Fixed hero content */}
       <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-white p-4">
         <div className="text-center max-w-6xl mx-auto">
@@ -89,14 +89,14 @@ export default function HeroSection() {
           willChange: "transform",
         }}
       >
-        
+        <LightningBackground />
         <img
           src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Background"
           className="w-full h-auto object-cover"
         />
+
         <HyperspeedBackground />
-        
       </div>
 
       {/* Video controls */}
