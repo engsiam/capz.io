@@ -85,12 +85,12 @@ export default function VideoSection() {
           {/* Content overlay */}
           <div className="absolute bottom-0 left-0 right-0 z-20 p-6 text-white">
             <h3 className="text-2xl font-bold mb-2">
-              I went to cpaZ Largest Office
+              I went to capZ Largest Office
             </h3>
-            <p className="text-gray-300 mb-4">
+            {/* <p className="text-gray-300 mb-4">
               capZ • 579K views • 1 year ago
-            </p>
-            <Link
+            </p> */}
+            {/* <Link
               href="#"
               target="_blank"
               rel="noopener noreferrer"
@@ -110,7 +110,7 @@ export default function VideoSection() {
                   clipRule="evenodd"
                 />
               </svg>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
