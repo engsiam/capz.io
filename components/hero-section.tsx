@@ -1,6 +1,5 @@
 "use client";
 
-import LightningBackground from "@/components/Lightning";
 import { useTheme } from "@/context/theme-context";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -93,7 +92,7 @@ export default function HeroSection() {
           willChange: "transform",
         }}
       >
-         {/* <LightningBackground xOffset={parallaxOffset} /> */}
+        
         <img
           src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Background"

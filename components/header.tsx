@@ -58,7 +58,7 @@ export default function Header() {
                 href="/investors"
                 className="text-md font-medium text-white hover:text-white transition-colors"
               >
-                Teams
+                Investors
               </Link>
               <Link
                 href="/teams"
