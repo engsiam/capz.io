@@ -1,18 +1,23 @@
 import {
+  BatteryCharging,
   Brain,
+  Briefcase,
+  Database,
   HeartPulse,
   Leaf,
   Lock,
   Server,
+  Shield,
   ShieldCheck,
   Sprout,
+  Stethoscope,
 } from "lucide-react";
 
 export const featuredStartups = [
   {
     id: 1,
     name: "NeuralTech",
-    logo: Brain, 
+    logo: Brain,
     description: "AI-driven data analytics for enterprise",
     fundingStage: "Series A",
     raised: "$5.2M",
@@ -20,7 +25,7 @@ export const featuredStartups = [
   {
     id: 2,
     name: "CloudSecure",
-    logo: ShieldCheck, 
+    logo: ShieldCheck,
     description: "Zero-trust security for cloud infrastructure",
     fundingStage: "Seed",
     raised: "$1.8M",
@@ -110,16 +115,15 @@ export const metrics = [
 
 // partnersData data
 export const partnersData = [
-  { id: 1, src: './brand/one.png', alt: 'Partner 1' },
-  { id: 2, src: './brand/two.png', alt: 'Partner 2' },
-  { id: 3, src: './brand/three.jpg', alt: 'Partner 3' },
-  { id: 4, src: './brand/four.png', alt: 'Partner 4' },
-  { id: 5, src: './brand/five.png', alt: 'Partner 5' },
-  { id: 6, src: './brand/six.jpg', alt: 'Partner 6' }
+  { id: 1, src: "./brand/one.png", alt: "Partner 1" },
+  { id: 2, src: "./brand/two.png", alt: "Partner 2" },
+  { id: 3, src: "./brand/three.jpg", alt: "Partner 3" },
+  { id: 4, src: "./brand/four.png", alt: "Partner 4" },
+  { id: 5, src: "./brand/five.png", alt: "Partner 5" },
+  { id: 6, src: "./brand/six.jpg", alt: "Partner 6" },
 ];
 
 export default partnersData;
-
 
 export const teamMembers = [
   {
@@ -513,5 +517,104 @@ export const teamMembers = [
         color: "#0A66C2",
       },
     ],
+  },
+];
+
+export const projects = [
+  {
+    id: 1,
+    name: "NeuralTech",
+    logo: Briefcase,
+    description: "AI-driven data analytics for enterprise",
+    fundingStage: "Series A",
+    raised: "$5.2M",
+    goal: "$8M",
+    progress: 65,
+    industry: "AI/ML",
+    location: "San Francisco, CA",
+  },
+  {
+    id: 2,
+    name: "CloudSecure",
+    logo: Lock,
+    description: "Zero-trust security for cloud infrastructure",
+    fundingStage: "Seed",
+    raised: "$1.8M",
+    goal: "$3M",
+    progress: 60,
+    industry: "Cybersecurity",
+    location: "Boston, MA",
+  },
+  {
+    id: 3,
+    name: "GreenFinance",
+    logo: Leaf,
+    description: "Sustainable investment platform",
+    fundingStage: "Series B",
+    raised: "$12M",
+    goal: "$20M",
+    progress: 60,
+    industry: "FinTech",
+    location: "New York, NY",
+  },
+  {
+    id: 4,
+    name: "HealthBridge",
+    logo: Stethoscope,
+    description: "Remote patient monitoring solutions",
+    fundingStage: "Seed",
+    raised: "$2.5M",
+    goal: "$4M",
+    progress: 62,
+    industry: "HealthTech",
+    location: "Austin, TX",
+  },
+  {
+    id: 5,
+    name: "EcoCharge",
+    logo: BatteryCharging,
+    description: "Renewable energy charging infrastructure",
+    fundingStage: "Series A",
+    raised: "$7.5M",
+    goal: "$10M",
+    progress: 75,
+    industry: "CleanTech",
+    location: "Portland, OR",
+  },
+  {
+    id: 6,
+    name: "UrbanFarm",
+    logo: Sprout,
+    description: "Vertical farming technology for urban areas",
+    fundingStage: "Seed",
+    raised: "$3.2M",
+    goal: "$5M",
+    progress: 64,
+    industry: "AgTech",
+    location: "Chicago, IL",
+  },
+  {
+    id: 7,
+    name: "DataSync",
+    logo: Database,
+    description: "Real-time data synchronization platform",
+    fundingStage: "Series A",
+    raised: "$6.8M",
+    goal: "$12M",
+    progress: 57,
+    industry: "Enterprise Software",
+    location: "Seattle, WA",
+  },
+  {
+    id: 8,
+    name: "CryptoSecure",
+    logo: Shield,
+    description: "Blockchain security and compliance tools",
+    fundingStage: "Seed",
+    raised: "$2.1M",
+    goal: "$4M",
+    progress: 52,
+    industry: "Blockchain",
+    location: "Miami, FL",
   },
 ];

@@ -18,6 +18,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import WhyChoseUs from "@/components/WhyChoseUs";
+import ProjectCard from "@/components/ProjectCard";
 
 // Register GSAP plugins
 if (typeof window !== "undefined") {
@@ -78,20 +79,6 @@ export default function Home() {
         duration: 0.5,
         stagger: 0.2,
       });
-
-      // Feature cards animation
-      // gsap.from(".feature-card", {
-      //   scrollTrigger: {
-      //     trigger: sectionRefs.whyCapZ.current,
-      //     start: "top 70%",
-      //     end: "bottom 20%",
-      //     toggleActions: "play none none reverse",
-      //   },
-      //   y: 50,
-      //   opacity: 0,
-      //   duration: 0.6,
-      //   stagger: 0.2,
-      // })
 
       // CTA animation
       const ctaTimeline = gsap.timeline({
@@ -194,34 +181,7 @@ export default function Home() {
                   Investors, find promising ventures. Discover where to invest
                   wisely. We create open connections for funding.
                 </p>
-                {/* <ScrollRevealText
-                  text=""
-                /> */}
-                {/* <ScrollRevealText
-                  text=""
-                /> */}
-                {/* <ScrollFloat
-                  animationDuration={1}
-                  ease="back.inOut(2)"
-                  scrollStart="center bottom+=50%"
-                  scrollEnd="bottom bottom-=40%"
-                  stagger={0.03}
-                >
-                It's a complete ecosystem for innovation. Not just a funding
-                  source. For visionaries, get capital and support. Access
-                  resources to make your plan real.
-                  </ScrollFloat>
-                <ScrollFloat
-                  animationDuration={1}
-                  ease="back.inOut(2)"
-                  scrollStart="center bottom+=50%"
-                  scrollEnd="bottom bottom-=40%"
-                  stagger={0.03}
-                >
-                  
-                  Investors, find promising ventures. Discover where to invest
-                  wisely. We create open connections for funding.
-                </ScrollFloat> */}
+                
               </div>
             </div>
             <div className="about-content">
@@ -306,9 +266,9 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredStartups.map((startup, index) => (
-              <StartupCard key={startup.id} startup={startup} index={index} />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {featuredStartups.slice(0, 6).map((startup, index) => (
+              <ProjectCard key={startup.id} project={startup} index={index} />
             ))}
           </div>
 
