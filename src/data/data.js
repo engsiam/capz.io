@@ -269,8 +269,33 @@ export const teamMembers = [
     ],
   },
   {
+    id: 16,
+    name: "Hridoy Hashmi",
+    role: "Junior Digital Marketer",
+     image:
+      "./teams/Hridoy.png",
+    socialLinks: [
+      {
+        platform: "facebook",
+        url: "https://facebook.com/#",
+        color: "#1877F2"
+      },
+      {
+        platform: "twitter",
+        url: "https://twitter.com/#",
+        color: "#1DA1F2"
+      },
+      {
+        platform: "linkedin",
+        url: "https://linkedin.com/in/#",
+        color: "#0A66C2"
+      },
+      
+    ],
+  },
+  {
     id: 9,
-    name: "Md.Rashed Khan Milon",
+    name: "Md. Rashed Khan Milon",
     role: " Junior Digital Marketer",
      image:
       "./teams/Rashed Babu.png",
@@ -295,10 +320,10 @@ export const teamMembers = [
   },
   {
     id: 10,
-    name: "Md. Shohan Paiker",
+    name: "Md.Shohan Paiker",
     role: "Junior Graphic Designer",
      image:
-      "./teams/Rashed Babu.png",
+      "https://archive.org/download/placeholder-image/placeholder-image.jpg",
     socialLinks: [
       {
         platform: "facebook",
@@ -320,10 +345,10 @@ export const teamMembers = [
   },
   {
     id: 11,
-    name: "Md.Mukta",
-    role: "Trainee",
+    name: "KM. Imam Hossen Cishti",
+    role: "Junior Digital Marketer",
      image:
-      "./teams/Mukta.png",
+      "https://archive.org/download/placeholder-image/placeholder-image.jpg",
     socialLinks: [
       {
         platform: "facebook",
@@ -343,12 +368,12 @@ export const teamMembers = [
       
     ],
   },
-   {
+  {
     id: 12,
-    name: "Miss.Tuba",
-    role: "Trainee",
+    name: "Mst. Rupaly Khatun",
+    role: "Junior Digital Marketer,",
      image:
-      "./teams/Tuba.png",
+      "./teams/Rupali.png",
     socialLinks: [
       {
         platform: "facebook",
@@ -370,8 +395,33 @@ export const teamMembers = [
   },
   {
     id: 13,
-    name: "Miss.Ohona",
-    role: "Trainee",
+    name: "Mst. Rumana Khatun",
+    role: "Junior Digital Marketer,",
+     image:
+      "./teams/Rumana.png",
+    socialLinks: [
+      {
+        platform: "facebook",
+        url: "https://facebook.com/#",
+        color: "#1877F2"
+      },
+      {
+        platform: "twitter",
+        url: "https://twitter.com/#",
+        color: "#1DA1F2"
+      },
+      {
+        platform: "linkedin",
+        url: "https://linkedin.com/in/#",
+        color: "#0A66C2"
+      },
+      
+    ],
+  },
+   {
+    id: 15,
+    name: "Ahona Binte Zaman",
+    role: "Junior Content Writer",
      image:
       "./teams/Ohona.png",
     socialLinks: [
@@ -395,10 +445,10 @@ export const teamMembers = [
   },
   {
     id: 14,
-    name: "Miss.Rumana",
-    role: "Trainee",
+    name: "Tuba Ahammad",
+    role: "Junior Graphics Designer",
      image:
-      "./teams/Rumana.png",
+      "./teams/Tuba.png",
     socialLinks: [
       {
         platform: "facebook",
@@ -418,12 +468,14 @@ export const teamMembers = [
       
     ],
   },
+ 
+  
   {
-    id: 15,
-    name: "Miss.Rupali",
-    role: "Trainee",
+    id: 17,
+    name: "Md.Mukta",
+    role: "Junior Digital Marketer",
      image:
-      "./teams/Rupali.png",
+      "./teams/Mukta.png",
     socialLinks: [
       {
         platform: "facebook",
@@ -443,6 +495,10 @@ export const teamMembers = [
       
     ],
   },
+   
+  
+  
+  
   
   
   
