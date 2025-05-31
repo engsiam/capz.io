@@ -24,8 +24,8 @@ export const HowItWorksStep: React.FC<HowItWorksStepProps> = ({
         <Icon className="w-8 h-8 text-cyan-400" />
       </motion.div>
       <div>
-        <h4 className="text-lg font-semibold mb-1">{title}</h4>
-        <p className="text-gray-300">{description}</p>
+        <h4 className="text-lg font-semibold mb-1 text-white">{title}</h4>
+        <p className="text-white">{description}</p>
       </div>
     </div>
   );
