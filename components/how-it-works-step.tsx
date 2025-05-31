@@ -1,18 +1,19 @@
 "use client"
 
 interface HowItWorksStepProps {
-  number: number
+  
   title: string
   description: string
   className?: string
+  icon:React.ElementType
 }
 
-export function HowItWorksStep({ number, title, description, className = "" }: HowItWorksStepProps) {
+export function HowItWorksStep({ icon: Icon, title, description, className = "" }: HowItWorksStepProps) {
   return (
     <div className={`flex gap-4 ${className}`}>
       <div className="flex-shrink-0">
         <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-xl">
-          {number}
+          <Icon className="w-6 h-6" />
         </div>
       </div>
       <div>

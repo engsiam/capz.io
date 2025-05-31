@@ -3,9 +3,9 @@ import AnimatedCounter from "@/components/animated-counter";
 import { FeatureCard } from "@/components/feature-card";
 import FlagshipSlider from "@/components/FlagshipSlider";
 import HeroSection from "@/components/hero-section";
-import { HowItWorksStep } from "@/components/how-it-works-step";
 import PartnersGrid from "@/components/partners";
 import { StartupCard } from "@/components/startup-card";
+import HomeStep from "@/components/step";
 import VerticalVideoSlider from "@/components/VerticalSlider";
 import VideoSection from "@/components/video-section";
 import VideoCollaps from "@/components/VideoCollaps";
@@ -14,7 +14,7 @@ import { featuredStartups, metrics } from "@/src/data/data";
 import { useScroll, useTransform } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
+
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
@@ -290,94 +290,7 @@ export default function Home() {
       </section>
 
       {/* How It Works Section */}
-      <section
-        ref={sectionRefs.howItWorks}
-        className="py-24 px-4 relative bg-gray-900/50 border-t border-gray-800"
-      >
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">
-              How we work
-            </h2>
-            <p className="text-lg max-w-3xl mx-auto text-gray-300">
-              Our simple process gets results. It links great ideas to smart
-              capital.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-8 mt-12">
-            <div>
-              <h3 className="text-2xl font-bold mb-8 text-left text-cyan-400">
-                For Entrepreneurs
-              </h3>
-              <div className="space-y-12">
-                <HowItWorksStep
-                  number={1}
-                  title="Submit Your Startup"
-                  description="Create your profile and submit your startup details, pitch deck, and funding requirements."
-                  className="step-item"
-                />
-
-                <HowItWorksStep
-                  number={2}
-                  title="Get Matched With Mentors"
-                  description="Our algorithm matches you with industry-specific mentors who help refine your pitch."
-                  className="step-item"
-                />
-
-                <HowItWorksStep
-                  number={3}
-                  title="Connect With Investors"
-                  description="Present to our curated network of investors looking for opportunities in your sector."
-                  className="step-item"
-                />
-
-                <HowItWorksStep
-                  number={4}
-                  title="Secure Funding"
-                  description="Close your funding round with legal and technical support from our team."
-                  className="step-item"
-                />
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-2xl font-bold mb-8 text-left text-blue-400">
-                For Investors
-              </h3>
-              <div className="space-y-12">
-                <HowItWorksStep
-                  number={1}
-                  title="Join Our Network"
-                  description="Create your investor profile with your investment criteria and focus areas."
-                  className="step-item"
-                />
-
-                <HowItWorksStep
-                  number={2}
-                  title="Discover Opportunities"
-                  description="Browse pre-vetted startups matched to your investment preferences."
-                  className="step-item"
-                />
-
-                <HowItWorksStep
-                  number={3}
-                  title="Due Diligence Support"
-                  description="Access detailed analytics and our expert evaluation on each startup."
-                  className="step-item"
-                />
-
-                <HowItWorksStep
-                  number={4}
-                  title="Portfolio Management"
-                  description="Track your investments and get regular updates on portfolio performance."
-                  className="step-item"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HomeStep />
 
       {/* Featured Startups */}
       <section ref={sectionRefs.startups} className="py-24 px-4 relative">
@@ -846,7 +759,7 @@ a1 1 0 010-1.414z"
               Trusted By Industry Leaders
             </h2>
           </div>
-            <PartnersGrid />
+          <PartnersGrid />
           {/* <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-items-center">
             {[1, 2, 3, 4, 5, 6].map((i) => (
               <div
