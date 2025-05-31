@@ -6,7 +6,7 @@ const TeamSection = () => {
     <section className="py-16 px-4 bg-gray-750 mt-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <span className="text-[#FE9B15] font-medium text-center">Team Members</span>
+          {/* <span className="text-[#FE9B15] font-medium text-center">Team Members</span> */}
           <h2 className="text-4xl md:text-5xl font-bold mt-2 mb-4 text-white">
             Meet Our Exceptional Team
           </h2>

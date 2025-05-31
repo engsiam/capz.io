@@ -68,8 +68,8 @@ export default function InvestorsPage() {
             </div>
             <h3 className="text-3xl font-bold mb-2">34%</h3>
             <p className="text-gray-400">Average Return on Investment</p>
-          </div>
-
+          </div>  
+    
           <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
             <div className="size-16 mx-auto mb-4 rounded-full bg-blue-500/20 flex items-center justify-center">
               <Users className="size-8 text-blue-400" />
