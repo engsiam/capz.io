@@ -58,8 +58,14 @@ export default function Header() {
                 href="/investors"
                 className="text-md font-medium text-white hover:text-white transition-colors"
               >
-                Investors
+                Teams
               </Link>
+              <Link
+                href="/mentors"
+                className="text-md font-medium text-white hover:text-white transition-colors"
+              >
+                Teams
+              </Link> 
               {/* <Link
                 href="/mentors"
                 className="text-md font-medium text-white hover:text-white transition-colors"

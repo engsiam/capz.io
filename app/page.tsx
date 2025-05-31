@@ -185,16 +185,18 @@ export default function Home() {
                 About CapZ
               </h2>
               <div className="space-y-6 video-text text-xl">
-                {/* <ScrollRevealText
-                  text="It's a complete ecosystem for innovation. Not just a funding
+                <p>It's a complete ecosystem for innovation. Not just a funding
                   source. For visionaries, get capital and support. Access
-                  resources to make your plan real."
+                  resources to make your plan real.</p>
+                  <p>Investors, find promising ventures. Discover where to invest
+                  wisely. We create open connections for funding.</p>
+                {/* <ScrollRevealText
+                  text=""
                 /> */}
                 {/* <ScrollRevealText
-                  text="Investors, find promising ventures. Discover where to invest
-                  wisely. We create open connections for funding."
+                  text=""
                 /> */}
-                <ScrollFloat
+                {/* <ScrollFloat
                   animationDuration={1}
                   ease="back.inOut(2)"
                   scrollStart="center bottom+=50%"
@@ -215,7 +217,7 @@ export default function Home() {
                   
                   Investors, find promising ventures. Discover where to invest
                   wisely. We create open connections for funding.
-                </ScrollFloat>
+                </ScrollFloat> */}
               </div>
             </div>
             <div className="about-content">
