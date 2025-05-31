@@ -61,7 +61,7 @@ export default function Header() {
                 Teams
               </Link>
               <Link
-                href="/mentors"
+                href="/teams"
                 className="text-md font-medium text-white hover:text-white transition-colors"
               >
                 Teams
