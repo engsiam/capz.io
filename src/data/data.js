@@ -121,32 +121,7 @@ export const teamMembers = [
   {
     id: 3,
     name: "Md. Shohag Ahmed",
-    role: "Project Manager",
-     image:
-      "./teams/Rakib Babu.png",
-    socialLinks: [
-      {
-        platform: "facebook",
-        url: "https://facebook.com/#",
-        color: "#1877F2"
-      },
-      {
-        platform: "twitter",
-        url: "https://twitter.com/#",
-        color: "#1DA1F2"
-      },
-      {
-        platform: "linkedin",
-        url: "https://linkedin.com/in/#",
-        color: "#0A66C2"
-      },
-      
-    ],
-  },
-  {
-    id: 4,
-    name: "Md.Shohag ",
-    role: "Senor Graphics Designer",
+    role: "Lead Graphic Designer",
      image:
       "./teams/Shohag.png",
     socialLinks: [
@@ -169,57 +144,7 @@ export const teamMembers = [
     ],
   },
   {
-    id: 5,
-    name: "Md.Aktarul ",
-    role: "Manager",
-     image:
-      "./teams/Aktarul.png",
-    socialLinks: [
-      {
-        platform: "facebook",
-        url: "https://facebook.com/#",
-        color: "#1877F2"
-      },
-      {
-        platform: "twitter",
-        url: "https://twitter.com/#",
-        color: "#1DA1F2"
-      },
-      {
-        platform: "linkedin",
-        url: "https://linkedin.com/in/#",
-        color: "#0A66C2"
-      },
-      
-    ],
-  },
-  {
-    id: 6,
-    name: "Md.hasan ",
-    role: "Marketer",
-     image:
-      "./teams/hasan.png",
-    socialLinks: [
-      {
-        platform: "facebook",
-        url: "https://facebook.com/#",
-        color: "#1877F2"
-      },
-      {
-        platform: "twitter",
-        url: "https://twitter.com/#",
-        color: "#1DA1F2"
-      },
-      {
-        platform: "linkedin",
-        url: "https://linkedin.com/in/#",
-        color: "#0A66C2"
-      },
-      
-    ],
-  },
-  {
-    id: 7,
+    id: 4,
     name: "Md.Shohrab Hossain",
     role: "Software Engineer",
      image:
@@ -244,11 +169,86 @@ export const teamMembers = [
     ],
   },
   {
-    id: 8,
-    name: "Md.Shohan ",
-    role: "Marketer",
+    id: 5,
+    name: "Md. Habibbur Rahman",
+    role: "Senior Digital Marketer",
      image:
-      "./teams/Shohan.png",
+      "https://archive.org/download/placeholder-image/placeholder-image.jpg",
+    socialLinks: [
+      {
+        platform: "facebook",
+        url: "https://facebook.com/#",
+        color: "#1877F2"
+      },
+      {
+        platform: "twitter",
+        url: "https://twitter.com/#",
+        color: "#1DA1F2"
+      },
+      {
+        platform: "linkedin",
+        url: "https://linkedin.com/in/#",
+        color: "#0A66C2"
+      },
+      
+    ],
+  },
+  {
+    id: 6,
+    name: "Md.Rakib Hossain",
+    role: "CMO",
+     image:
+      "./teams/Rakib Babu.png",
+    socialLinks: [
+      {
+        platform: "facebook",
+        url: "https://facebook.com/#",
+        color: "#1877F2"
+      },
+      {
+        platform: "twitter",
+        url: "https://twitter.com/#",
+        color: "#1DA1F2"
+      },
+      {
+        platform: "linkedin",
+        url: "https://linkedin.com/in/#",
+        color: "#0A66C2"
+      },
+      
+    ],
+  },
+  {
+    id: 7,
+    name: "Md. Aktarul Islam",
+    role: "Branch Manager",
+     image:
+      "./teams/Aktarul.png",
+    socialLinks: [
+      {
+        platform: "facebook",
+        url: "https://facebook.com/#",
+        color: "#1877F2"
+      },
+      {
+        platform: "twitter",
+        url: "https://twitter.com/#",
+        color: "#1DA1F2"
+      },
+      {
+        platform: "linkedin",
+        url: "https://linkedin.com/in/#",
+        color: "#0A66C2"
+      },
+      
+    ],
+  },
+  {
+    id: 8,
+    name: "Md. Al Hasan",
+    role: "Social Media Manager",
+     image:
+      "./teams/hasan.png",
     socialLinks: [
       {
         platform: "facebook",
@@ -270,10 +270,10 @@ export const teamMembers = [
   },
   {
     id: 9,
-    name: "Md.Hridoy ",
-    role: "Trainee",
+    name: "Md.Rashed Khan Milon",
+    role: " Junior Digital Marketer",
      image:
-      "./teams/Hridoy.png",
+      "./teams/Rashed Babu.png",
     socialLinks: [
       {
         platform: "facebook",
@@ -295,8 +295,8 @@ export const teamMembers = [
   },
   {
     id: 10,
-    name: "Md.Rashed Babu ",
-    role: "Trainee",
+    name: "Md. Shohan Paiker",
+    role: "Junior Graphic Designer",
      image:
       "./teams/Rashed Babu.png",
     socialLinks: [
@@ -443,31 +443,7 @@ export const teamMembers = [
       
     ],
   },
-  {
-    id: 16,
-    name: "Md.MukAl Aminta",
-    role: "Office Boy",
-     image:
-      "./teams/Al Amin.png",
-    socialLinks: [
-      {
-        platform: "facebook",
-        url: "https://facebook.com/#",
-        color: "#1877F2"
-      },
-      {
-        platform: "twitter",
-        url: "https://twitter.com/#",
-        color: "#1DA1F2"
-      },
-      {
-        platform: "linkedin",
-        url: "https://linkedin.com/in/#",
-        color: "#0A66C2"
-      },
-      
-    ],
-  },
+  
   
   
 ];

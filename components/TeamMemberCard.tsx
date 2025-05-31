@@ -34,11 +34,11 @@ const TeamMemberCard = ({ member }) => {
         />
         
         {/* Diagonal overlay effect - slowly appears on hover */}
-        <div 
+        {/* <div 
           className="absolute inset-0 bg-gradient-to-tr from-cyan-500/0 via-white/20 to-cyan-500/0 
                      opacity-0 group-hover:opacity-100 transition-opacity duration-[1500ms] ease-in-out"
           aria-hidden="true"
-        ></div>
+        ></div> */}
         
         {/* Alternative diagonal overlay that grows */}
         <div 
@@ -49,7 +49,7 @@ const TeamMemberCard = ({ member }) => {
         ></div>
         
         {/* Vertical accent line */}
-        <div className="absolute left-8 bottom-0 w-1 h-16 bg-cyan-500"></div>
+        {/* <div className="absolute left-8 bottom-0 w-1 h-16 bg-cyan-500"></div> */}
       </div>
       
       {/* Social media links with staggered appearance */}
