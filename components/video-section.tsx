@@ -71,6 +71,7 @@ export default function VideoSection() {
           {/* Video with zoom effect */}
           <div className="absolute inset-0 z-0 transition-transform duration-100">
             <iframe
+            loading="lazy"
               width="100%"
               height="100%"
               src="https://www.youtube.com/embed/LxpWWAdFSgs?si=z4hD75bomvkjInBC&autoplay=1&mute=1&loop=1&playlist=LxpWWAdFSgs&controls=0&showinfo=0&rel=0&enablejsapi=1"
