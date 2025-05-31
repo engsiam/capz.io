@@ -4,6 +4,7 @@ import { useRef } from "react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Link from "next/link";
 
 const slides = [
   {
@@ -68,9 +69,28 @@ export default function FlagshipSlider() {
                   {slide.title}
                 </h3>
                 <p className="mb-6 text-black">{slide.description}</p>
-                <button className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition">
+                 <Link
+                href="/entrepreneurs/register"
+                className="cta-btn inline-flex items-center gap-2 px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 relative z-10"
+              >
+                Enter our PropVerse
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1  1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1
+a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </Link>
+                {/* <button className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition">
                   Enter our PropVerse →
-                </button>
+                </button> */}
               </div>
               <div className="mt-6 md:mt-0 md:ml-8">
                 <video
