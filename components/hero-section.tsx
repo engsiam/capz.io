@@ -2,6 +2,7 @@
 
 import { useTheme } from "@/context/theme-context";
 import { motion } from "framer-motion";
+import Img from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import HyperspeedBackground from "./HyperspeedBackground";
@@ -22,12 +23,15 @@ export default function HeroSection() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [scrollY]);
 
-    // Calculate a parallax offset for lightning background
+  // Calculate a parallax offset for lightning background
   // Adjust multiplier to control speed/direction
-  const parallaxOffset = scrollY * 0.3; 
+  const parallaxOffset = scrollY * 0.3;
 
   return (
-    <div ref={heroRef} className="relative h-screen w-full overflow-hidden">
+    <div
+      ref={heroRef}
+      className="relative h-[80vh] md:h-screen w-full overflow-hidden"
+    >
       {/* Fixed hero content */}
       <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-white p-4">
         <div className="text-center max-w-6xl mx-auto">
@@ -54,7 +58,7 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-lg md:text-xl mb-10 max-w-3xl mx-auto text-white"
+            className="text-base md:text-xl mb-10 max-w-3xl mx-auto text-white"
           >
             Have a solid project? We find the capital. Turn your detailed plan
             real. Investors, access quality opportunities. Your money works hard
@@ -92,11 +96,12 @@ export default function HeroSection() {
           willChange: "transform",
         }}
       >
-        
-        <img
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        <Img
+          src="./slider/building.jpg"
+          fill
           alt="Background"
-          className="w-full h-auto object-cover"
+          loading="lazy"
+          className="w-full h-full object-cover"
         />
 
         <HyperspeedBackground />
