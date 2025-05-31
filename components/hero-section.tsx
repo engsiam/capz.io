@@ -97,11 +97,12 @@ export default function HeroSection() {
         }}
       >
         <Img
-          src="./slider/building.jpg"
-          fill
+          src="/slider/building.jpg"
           alt="Background"
-          loading="lazy"
-          className="w-full h-full object-cover"
+          fill
+          sizes="100vw"
+          priority 
+          className="object-cover"
         />
 
         <HyperspeedBackground />
