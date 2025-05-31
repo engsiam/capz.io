@@ -45,11 +45,12 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-black/80 backdrop-blur-sm border-b border-gray-800"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
+    ${
+      isScrolled
+        ? "bg-black/80 backdrop-blur-sm border-b border-white text-white"
+        : "bg-black/80 text-white"
+    }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
@@ -69,19 +70,19 @@ export default function Header() {
             <nav className="hidden md:flex items-center gap-6">
               <Link
                 href="/"
-                className="text-md font-medium text-white hover:text-white transition-colors"
+                className="text-md font-medium  hover:text-[#2563eb] transition-colors"
               >
                 Home
               </Link>
               <Link
                 href="/projects"
-                className="text-md font-medium text-white hover:text-white transition-colors"
+                className="text-md font-medium hover:text-[#2563eb]  transition-colors"
               >
                 Startups
               </Link>
               <Link
                 href="/investors"
-                className="text-md font-medium text-white hover:text-white transition-colors"
+                className="text-md font-medium hover:text-[#2563eb]  transition-colors"
               >
                 Investors
               </Link>
@@ -92,7 +93,7 @@ export default function Header() {
                   aria-haspopup="true"
                   aria-expanded={teamOpen}
                   onClick={() => setTeamOpen((open) => !open)}
-                  className="flex items-center gap-1 text-md font-medium text-white hover:text-white transition-colors focus:outline-none"
+                  className="flex items-center gap-1 text-md font-medium hover:text-[#2563eb] transition-colors focus:outline-none"
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
                       e.preventDefault();
@@ -132,7 +133,7 @@ export default function Header() {
               <ThemeToggle />
               <Link
                 href="/login"
-                className="text-md font-medium text-white hover:text-white transition-colors px-4 py-2 border border-gray-800 rounded-full hover:border-cyan-500"
+                className="text-md font-medium text-white hover:text-dark transition-colors px-4 py-2 border border-gray-800 rounded-full hover:border-cyan-500 dark:hover:text-white"
               >
                 Log In
               </Link>
@@ -218,14 +219,14 @@ export default function Header() {
                     <Link
                       href="/about"
                       className="block px-4 py-2 text-sm text-gray-300 hover:text-white"
-                      onClick={() => setMobileMenuOpen(false)}
+                      onClick={() => setMobileMenuOpen(true)}
                     >
                       About
                     </Link>
                     <Link
                       href="/teams"
                       className="block px-4 py-2 text-sm text-gray-300 hover:text-white"
-                      onClick={() => setMobileMenuOpen(false)}
+                      onClick={() => setMobileMenuOpen(true)}
                     >
                       Our Team
                     </Link>

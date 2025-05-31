@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
+
+
 interface FeatureCardProps {
   icon: ReactNode;
   title: string;
@@ -17,7 +19,7 @@ export function FeatureCard({ icon, title, description }: FeatureCardProps) {
     >
       <div className="text-cyan-400 mb-4">{icon}</div>
       <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="text-gray-400 text-white">{description}</p>
+      <p className="text-black dark:text-white">{description}</p>
     </motion.div>
   );
 }

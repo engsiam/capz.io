@@ -30,13 +30,18 @@ export default function AboutPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h2 className="text-3xl font-bold mb-6 text-white">Our Story</h2>
-            <div className="space-y-4 text-white text-2xl">
+            <h2 className="text-3xl font-bold mb-6 text-black dark:text-white">
+              Our Story
+            </h2>
+            <div className="space-y-4 text-black dark:text-white text-2xl">
               <p>
-                It's a complete ecosystem for innovation. Not just a funding source. For visionaries, get capital and support. Access resources to make your plan real.
+                It's a complete ecosystem for innovation. Not just a funding
+                source. For visionaries, get capital and support. Access
+                resources to make your plan real.
               </p>
               <p>
-                Investors, find promising ventures. Discover where to invest wisely. We create open connections for funding.
+                Investors, find promising ventures. Discover where to invest
+                wisely. We create open connections for funding.
               </p>
               {/* <p>
                 Transparency is key to everything we do. We provide clear
@@ -73,7 +78,7 @@ export default function AboutPage() {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="mb-20"
         >
-          <h2 className="text-3xl font-bold mb-10 text-center text-white">
+          <h2 className="text-3xl font-bold mb-10 text-center dark-toggle">
             Our Values
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
@@ -160,7 +165,7 @@ export default function AboutPage() {
           transition={{ duration: 0.5, delay: 0.8 }}
           className="mb-20"
         >
-          <h2 className="text-3xl font-bold mb-10 text-center text-white">
+          <h2 className="text-3xl font-bold mb-10 text-center v">
             Leadership Team
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -212,7 +217,7 @@ export default function AboutPage() {
           transition={{ duration: 0.5, delay: 1 }}
           className="text-center"
         >
-          <h2 className="text-3xl font-bold mb-6 text-white">
+          <h2 className="text-3xl font-bold mb-6 dark-toggle">
             Join Our Mission
           </h2>
           <p className="text-lg max-w-3xl mx-auto text-gray-300 mb-8">

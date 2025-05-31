@@ -75,8 +75,8 @@ const TeamMemberCard = ({ member }) => {
 
       {/* Name and role info */}
       <div className="p-4 bg-gray-900/50">
-        <h3 className="text-xl font-bold text-white">{member.name}</h3>
-        <p className="text-white">{member.role}</p>
+        <h3 className="text-xl font-bold text-black dark:text-white">{member.name}</h3>
+        <p className="text-black dark:text-white">{member.role}</p>
       </div>
     </div>
   );

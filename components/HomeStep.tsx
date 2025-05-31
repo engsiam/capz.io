@@ -1,4 +1,3 @@
-import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import {
   CheckCircle,
@@ -10,6 +9,7 @@ import {
   Search,
   UserPlus,
 } from "lucide-react";
+import React, { useRef } from "react";
 import { HowItWorksStep } from "./how-it-works-step";
 
 const itemVariants = {
@@ -80,12 +80,10 @@ const Section = ({
   steps: { icon: React.ElementType; title: string; desc: string }[];
 }) => (
   <motion.div
-    className={`bg-gray-800/50 rounded-xl p-8 border border-gray-700 hover:border-${color}-500/50 transition-colors duration-300`}
+    className={`bg-gray-800/90 rounded-xl p-8 border border-gray-700 hover:border-${color}-500/50 transition-colors duration-300 dark:bg-gray-900/50 dark:border-gray-800 dark:hover:border-${color}-500/50`}
     variants={itemVariants}
   >
-    <h3 className={`text-2xl font-bold mb-6 text-${color}-400`}>
-      {title}
-    </h3>
+    <h3 className={`text-2xl font-bold mb-6 text-${color}-400`}>{title}</h3>
     <div className="space-y-8">
       {steps.map((step, index) => (
         <motion.div key={index} variants={itemVariants}>
@@ -128,7 +126,7 @@ const HomeStep: React.FC = () => {
             <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">
               How We Work
             </h2>
-            <p className="text-lg max-w-3xl mx-auto text-gray-300">
+            <p className="text-lg max-w-3xl mx-auto text-black dark:text-white">
               Our simple process connects great ideas to smart capital and
               unlocks your venture’s potential.
             </p>
@@ -140,11 +138,7 @@ const HomeStep: React.FC = () => {
               color="cyan"
               steps={entrepreneurSteps}
             />
-            <Section
-              title="For Investors"
-              color="blue"
-              steps={investorSteps}
-            />
+            <Section title="For Investors" color="blue" steps={investorSteps} />
           </div>
         </div>
       </motion.div>

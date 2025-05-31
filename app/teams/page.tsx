@@ -7,10 +7,10 @@ const TeamSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           {/* <span className="text-[#FE9B15] font-medium text-center">Team Members</span> */}
-          <h2 className="text-4xl md:text-5xl font-bold mt-2 mb-4 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mt-2 mb-4 text-black dark:text-white">
             Meet Our Exceptional Team
           </h2>
-          <p className="max-w-3xl mx-auto text-white text-xl">
+          <p className="max-w-3xl mx-auto text-black text-xl dark:text-white">
             Meet the brilliant team at capZ where diverse expertise meets innovative solutions. Our dedicated professionals ensure your project’s success with excellence and creativity.
           </p>
         </div>
