@@ -10,17 +10,21 @@ import ThemeToggle from "./theme-toggle";
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [teamOpen, setTeamOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState<string | null>(null); // for mobile dropdown
+  const [teamOpen, setTeamOpen] = useState(false); // for desktop dropdown
 
   const pathname = usePathname();
-  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Close dropdown if clicking outside
+  // Separate refs for desktop and mobile dropdowns
+  const desktopDropdownRef = useRef<HTMLDivElement>(null);
+  // Mobile dropdown doesn't need outside click handling in this snippet
+
+  // Close desktop dropdown if clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
+        desktopDropdownRef.current &&
+        !desktopDropdownRef.current.contains(event.target as Node)
       ) {
         setTeamOpen(false);
       }
@@ -31,10 +35,11 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [teamOpen]);
 
-  // Reset state on route change and scroll detection
+  // Reset mobile menu and dropdowns on route change and scroll detection
   useEffect(() => {
     setMobileMenuOpen(false);
     setTeamOpen(false);
+    setDropdownOpen(null);
 
     function onScroll() {
       setIsScrolled(window.scrollY > 10);
@@ -70,30 +75,29 @@ export default function Header() {
             <nav className="hidden md:flex items-center gap-6">
               <Link
                 href="/"
-                className="text-md font-medium  hover:text-[#2563eb] transition-colors"
+                className="text-md font-medium hover:text-[#2563eb] transition-colors"
               >
                 Home
               </Link>
               <Link
                 href="/projects"
-                className="text-md font-medium hover:text-[#2563eb]  transition-colors"
+                className="text-md font-medium hover:text-[#2563eb] transition-colors"
               >
                 Startups
               </Link>
               <Link
                 href="/investors"
-                className="text-md font-medium hover:text-[#2563eb]  transition-colors"
+                className="text-md font-medium hover:text-[#2563eb] transition-colors"
               >
                 Investors
               </Link>
 
-              {/* Desktop Dropdown — opens/closes on click */}
-              <div ref={dropdownRef} className="relative">
+              {/* Desktop Dropdown */}
+              <div ref={desktopDropdownRef} className="relative">
                 <button
                   aria-haspopup="true"
                   aria-expanded={teamOpen}
                   onClick={() => setTeamOpen((open) => !open)}
-                  className="flex items-center gap-1 text-md font-medium hover:text-[#2563eb] transition-colors focus:outline-none"
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
                       e.preventDefault();
@@ -103,6 +107,7 @@ export default function Header() {
                       setTeamOpen(false);
                     }
                   }}
+                  className="flex items-center gap-1 text-md font-medium hover:text-[#2563eb] transition-colors focus:outline-none"
                 >
                   Company <ChevronDown className="size-4" />
                 </button>
@@ -159,11 +164,7 @@ export default function Header() {
                 className="flex items-center justify-center size-10 text-gray-300"
                 aria-label="Toggle menu"
               >
-                {mobileMenuOpen ? (
-                  <X className="size-6" />
-                ) : (
-                  <Menu className="size-6" />
-                )}
+                {mobileMenuOpen ? <X className="size-6" /> : <Menu className="size-6" />}
               </button>
             </div>
           </div>
@@ -196,42 +197,55 @@ export default function Header() {
               </Link>
 
               {/* Mobile Dropdown */}
-              <div className="flex flex-col">
-                <button
-                  onClick={() => setTeamOpen((open) => !open)}
-                  className="flex items-center justify-between text-sm font-medium text-gray-300 hover:text-white transition-colors px-4 py-2"
-                  aria-expanded={teamOpen}
-                  aria-controls="mobile-team-dropdown"
-                >
-                  <span>Company</span>
-                  <ChevronDown
-                    className={`size-4 transition-transform ${
-                      teamOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-
-                {teamOpen && (
-                  <div
-                    id="mobile-team-dropdown"
-                    className="bg-gray-800/50 rounded-md mt-1 mb-1 mx-4"
+              <div className="text-sm font-medium text-gray-300 hover:text-white transition-colors px-4 py-2">
+                <li className="relative list-none">
+                  <button
+                    aria-haspopup="true"
+                    aria-expanded={dropdownOpen === "Company"}
+                    onClick={() =>
+                      setDropdownOpen(dropdownOpen === "Company" ? null : "Company")
+                    }
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        setDropdownOpen(
+                          dropdownOpen === "Company" ? null : "Company"
+                        );
+                      }
+                      if (e.key === "Escape") {
+                        setDropdownOpen(null);
+                      }
+                    }}
+                    className="flex items-center justify-between w-full py-2 text-md font-medium hover:text-[#2563eb] transition-colors focus:outline-none"
                   >
-                    <Link
-                      href="/about"
-                      className="block px-4 py-2 text-sm text-gray-300 hover:text-white"
-                      onClick={() => setMobileMenuOpen(true)}
-                    >
-                      About
-                    </Link>
-                    <Link
-                      href="/teams"
-                      className="block px-4 py-2 text-sm text-gray-300 hover:text-white"
-                      onClick={() => setMobileMenuOpen(true)}
-                    >
-                      Our Team
-                    </Link>
-                  </div>
-                )}
+                    Company <ChevronDown className="size-4" />
+                  </button>
+
+                  {dropdownOpen === "Company" && (
+                    <div className="mt-1 rounded-md border border-gray-800 bg-gray-900 py-2 shadow-lg">
+                      <Link
+                        href="/about"
+                        className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-800/50"
+                        onClick={() => {
+                          setDropdownOpen(null);
+                          setMobileMenuOpen(false);
+                        }}
+                      >
+                        About
+                      </Link>
+                      <Link
+                        href="/teams"
+                        className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-800/50"
+                        onClick={() => {
+                          setDropdownOpen(null);
+                          setMobileMenuOpen(false);
+                        }}
+                      >
+                        Team
+                      </Link>
+                    </div>
+                  )}
+                </li>
               </div>
             </nav>
 
@@ -245,7 +259,7 @@ export default function Header() {
               </Link>
               <Link
                 href="/entrepreneurs/submit"
-                className="text-sm font-medium text-center text-white px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600"
+                className="px-4 py-2 text-sm font-medium text-center rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white transition-all hover:shadow-lg hover:shadow-cyan-500/20"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Submit Startup
