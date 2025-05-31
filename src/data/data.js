@@ -110,7 +110,7 @@ export const teamMembers = [
   {
     id: 2,
     name: "Md.Farhad Hossain",
-    role: "CEO & Founder",
+    role: "Co-founder & COO",
      image:
       "./teams/FarhadHossain.png",
     socialLinks: [
