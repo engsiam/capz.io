@@ -4,8 +4,7 @@ import { FeatureCard } from "@/components/feature-card";
 import FlagshipSlider from "@/components/FlagshipSlider";
 import HeroSection from "@/components/hero-section";
 import { HowItWorksStep } from "@/components/how-it-works-step";
-import ScrollFloat from "@/components/ScrollFloat";
-import ScrollRevealText from "@/components/ScrollRevealText";
+import PartnersGrid from "@/components/partners";
 import { StartupCard } from "@/components/startup-card";
 import VerticalVideoSlider from "@/components/VerticalSlider";
 import VideoSection from "@/components/video-section";
@@ -185,11 +184,15 @@ export default function Home() {
                 About CapZ
               </h2>
               <div className="space-y-6 video-text text-xl">
-                <p>It's a complete ecosystem for innovation. Not just a funding
+                <p>
+                  It's a complete ecosystem for innovation. Not just a funding
                   source. For visionaries, get capital and support. Access
-                  resources to make your plan real.</p>
-                  <p>Investors, find promising ventures. Discover where to invest
-                  wisely. We create open connections for funding.</p>
+                  resources to make your plan real.
+                </p>
+                <p>
+                  Investors, find promising ventures. Discover where to invest
+                  wisely. We create open connections for funding.
+                </p>
                 {/* <ScrollRevealText
                   text=""
                 /> */}
@@ -843,8 +846,8 @@ a1 1 0 010-1.414z"
               Trusted By Industry Leaders
             </h2>
           </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-items-center">
+            <PartnersGrid />
+          {/* <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-items-center">
             {[1, 2, 3, 4, 5, 6].map((i) => (
               <div
                 key={i}
@@ -859,7 +862,7 @@ a1 1 0 010-1.414z"
                 />
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
     </main>

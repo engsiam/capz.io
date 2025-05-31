@@ -1,17 +1,25 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import Image from "next/image"
-import Link from "next/link"
-import { Search } from "lucide-react"
+import { motion } from "framer-motion";
+import {
+  BatteryCharging,
+  Briefcase,
+  Database,
+  Leaf,
+  Lock,
+  Search,
+  Shield,
+  Sprout,
+  Stethoscope,
+} from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
 
-// Sample data for projects
 const projects = [
   {
     id: 1,
     name: "NeuralTech",
-    logo: "/placeholder.svg?height=80&width=80",
+    logo: Briefcase,
     description: "AI-driven data analytics for enterprise",
     fundingStage: "Series A",
     raised: "$5.2M",
@@ -23,7 +31,7 @@ const projects = [
   {
     id: 2,
     name: "CloudSecure",
-    logo: "/placeholder.svg?height=80&width=80",
+    logo: Lock,
     description: "Zero-trust security for cloud infrastructure",
     fundingStage: "Seed",
     raised: "$1.8M",
@@ -35,7 +43,7 @@ const projects = [
   {
     id: 3,
     name: "GreenFinance",
-    logo: "/placeholder.svg?height=80&width=80",
+    logo: Leaf,
     description: "Sustainable investment platform",
     fundingStage: "Series B",
     raised: "$12M",
@@ -47,7 +55,7 @@ const projects = [
   {
     id: 4,
     name: "HealthBridge",
-    logo: "/placeholder.svg?height=80&width=80",
+    logo: Stethoscope,
     description: "Remote patient monitoring solutions",
     fundingStage: "Seed",
     raised: "$2.5M",
@@ -59,7 +67,7 @@ const projects = [
   {
     id: 5,
     name: "EcoCharge",
-    logo: "/placeholder.svg?height=80&width=80",
+    logo: BatteryCharging,
     description: "Renewable energy charging infrastructure",
     fundingStage: "Series A",
     raised: "$7.5M",
@@ -71,7 +79,7 @@ const projects = [
   {
     id: 6,
     name: "UrbanFarm",
-    logo: "/placeholder.svg?height=80&width=80",
+    logo: Sprout,
     description: "Vertical farming technology for urban areas",
     fundingStage: "Seed",
     raised: "$3.2M",
@@ -83,7 +91,7 @@ const projects = [
   {
     id: 7,
     name: "DataSync",
-    logo: "/placeholder.svg?height=80&width=80",
+    logo: Database,
     description: "Real-time data synchronization platform",
     fundingStage: "Series A",
     raised: "$6.8M",
@@ -95,7 +103,7 @@ const projects = [
   {
     id: 8,
     name: "CryptoSecure",
-    logo: "/placeholder.svg?height=80&width=80",
+    logo: Shield,
     description: "Blockchain security and compliance tools",
     fundingStage: "Seed",
     raised: "$2.1M",
@@ -104,7 +112,7 @@ const projects = [
     industry: "Blockchain",
     location: "Miami, FL",
   },
-]
+];
 
 const industries = [
   "All Industries",
@@ -116,28 +124,38 @@ const industries = [
   "AgTech",
   "Enterprise Software",
   "Blockchain",
-]
+];
 
-const stages = ["All Stages", "Pre-Seed", "Seed", "Series A", "Series B", "Series C+"]
+const stages = [
+  "All Stages",
+  "Pre-Seed",
+  "Seed",
+  "Series A",
+  "Series B",
+  "Series C+",
+];
 
 export default function ProjectsPage() {
-  const [searchQuery, setSearchQuery] = useState("")
-  const [selectedIndustry, setSelectedIndustry] = useState("All Industries")
-  const [selectedStage, setSelectedStage] = useState("All Stages")
-  const [sortBy, setSortBy] = useState("newest")
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedIndustry, setSelectedIndustry] = useState("All Industries");
+  const [selectedStage, setSelectedStage] = useState("All Stages");
+  const [sortBy, setSortBy] = useState("newest");
 
   // Filter projects based on search, industry, and stage
   const filteredProjects = projects.filter((project) => {
     const matchesSearch =
       project.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      project.description.toLowerCase().includes(searchQuery.toLowerCase())
+      project.description.toLowerCase().includes(searchQuery.toLowerCase());
 
-    const matchesIndustry = selectedIndustry === "All Industries" || project.industry === selectedIndustry
+    const matchesIndustry =
+      selectedIndustry === "All Industries" ||
+      project.industry === selectedIndustry;
 
-    const matchesStage = selectedStage === "All Stages" || project.fundingStage === selectedStage
+    const matchesStage =
+      selectedStage === "All Stages" || project.fundingStage === selectedStage;
 
-    return matchesSearch && matchesIndustry && matchesStage
-  })
+    return matchesSearch && matchesIndustry && matchesStage;
+  });
 
   // Sort projects
   const sortedProjects = [...filteredProjects].sort((a, b) => {
@@ -145,18 +163,18 @@ export default function ProjectsPage() {
       return (
         Number.parseFloat(b.raised.replace("$", "").replace("M", "")) -
         Number.parseFloat(a.raised.replace("$", "").replace("M", ""))
-      )
+      );
     } else if (sortBy === "raised-low") {
       return (
         Number.parseFloat(a.raised.replace("$", "").replace("M", "")) -
         Number.parseFloat(b.raised.replace("$", "").replace("M", ""))
-      )
+      );
     } else if (sortBy === "progress") {
-      return b.progress - a.progress
+      return b.progress - a.progress;
     }
     // Default: newest (by ID in this mock data)
-    return b.id - a.id
-  })
+    return b.id - a.id;
+  });
 
   return (
     <main className="pt-24 pb-16">
@@ -171,7 +189,8 @@ export default function ProjectsPage() {
             Explore Startups
           </h1>
           <p className="text-lg max-w-3xl mx-auto text-gray-300">
-            Discover innovative startups raising capital across various industries and funding stages
+            Discover innovative startups raising capital across various
+            industries and funding stages
           </p>
         </motion.div>
 
@@ -224,7 +243,11 @@ export default function ProjectsPage() {
 
           <div className="flex justify-between items-center mt-4 pt-4 border-t border-gray-800">
             <div className="text-sm text-gray-400">
-              Showing <span className="font-medium text-white">{sortedProjects.length}</span> results
+              Showing{" "}
+              <span className="font-medium text-white">
+                {sortedProjects.length}
+              </span>{" "}
+              results
             </div>
 
             <div className="flex items-center gap-2">
@@ -256,13 +279,25 @@ export default function ProjectsPage() {
               >
                 <div className="p-6">
                   <div className="flex items-center gap-4 mb-4">
-                    <Image
+                    {project.logo ? (
+                      <project.logo className="w-10 h-10 text-primary rounded-lg bg-gray-800 p-2" />
+                    ) : (
+                      <img
+                        src="/placeholder.svg"
+                        alt={project.name}
+                        width={60}
+                        height={60}
+                        className="rounded-lg bg-gray-800 p-2"
+                      />
+                    )}
+
+                    {/* <Image
                       src={project.logo || "/placeholder.svg"}
                       alt={project.name}
                       width={60}
                       height={60}
                       className="rounded-lg bg-gray-800 p-2"
-                    />
+                    /> */}
                     <div>
                       <h3 className="font-bold text-lg">{project.name}</h3>
                       <div className="flex flex-wrap gap-2 mt-1">
@@ -276,7 +311,9 @@ export default function ProjectsPage() {
                     </div>
                   </div>
 
-                  <p className="text-gray-400 text-sm mb-4">{project.description}</p>
+                  <p className="text-gray-400 text-sm mb-4">
+                    {project.description}
+                  </p>
 
                   <div className="mb-4">
                     <div className="flex justify-between mb-1">
@@ -292,8 +329,12 @@ export default function ProjectsPage() {
                       ></div>
                     </div>
                     <div className="flex justify-between mt-1">
-                      <span className="text-xs text-gray-500">{project.progress}% complete</span>
-                      <span className="text-xs text-gray-500">{project.location}</span>
+                      <span className="text-xs text-gray-500">
+                        {project.progress}% complete
+                      </span>
+                      <span className="text-xs text-gray-500">
+                        {project.location}
+                      </span>
                     </div>
                   </div>
 
@@ -313,10 +354,12 @@ export default function ProjectsPage() {
               <Search className="size-8 text-gray-400" />
             </div>
             <h3 className="text-xl font-bold mb-2">No startups found</h3>
-            <p className="text-gray-400">Try adjusting your search or filter criteria</p>
+            <p className="text-gray-400">
+              Try adjusting your search or filter criteria
+            </p>
           </div>
         )}
       </div>
     </main>
-  )
+  );
 }

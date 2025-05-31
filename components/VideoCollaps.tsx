@@ -7,23 +7,23 @@ import { Swiper, SwiperSlide } from "swiper/react";
 const SLIDES = [
   {
     video:
-      "https://nextventures.fra1.cdn.digitaloceanspaces.com/new/events/event-1.m4v",
+      "https://videos.pexels.com/video-files/5207408/5207408-hd_1920_1080_25fps.mp4",
   },
   {
     video:
-      "https://nextventures.fra1.cdn.digitaloceanspaces.com/new/events/event-2.m4v",
+      "https://videos.pexels.com/video-files/29315509/12638980_1920_1080_25fps.mp4",
   },
   {
     video:
-      "https://nextventures.fra1.cdn.digitaloceanspaces.com/new/events/event-3.m4v",
+      "https://videos.pexels.com/video-files/7118947/7118947-uhd_2560_1440_30fps.mp4",
   },
   {
     video:
-      "https://nextventures.fra1.cdn.digitaloceanspaces.com/new/events/event-4.m4v",
+      "https://videos.pexels.com/video-files/8188994/8188994-uhd_2560_1440_25fps.mp4",
   },
   {
     video:
-      "https://nextventures.fra1.cdn.digitaloceanspaces.com/new/events/event-5.m4v",
+      "https://videos.pexels.com/video-files/26575058/11962638_1920_1080_24fps.mp4",
   },
 ];
 

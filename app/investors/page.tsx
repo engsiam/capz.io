@@ -45,7 +45,7 @@ export default function InvestorsPage() {
             <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-blue-500/10 rounded-full filter blur-3xl"></div>
             <div className="relative z-10 rounded-xl overflow-hidden border border-gray-800">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="./investors/invest.jpeg"
                 alt="Investors"
                 width={600}
                 height={400}

@@ -31,26 +31,19 @@ export default function AboutPage() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h2 className="text-3xl font-bold mb-6 text-white">Our Story</h2>
-            <div className="space-y-4 text-gray-300">
+            <div className="space-y-4 text-white text-2xl">
               <p>
-                Welcome to CapZ, where visions meet capital. We are a platform
-                designed for growth and impact. Our goal is simple: connect
-                great projects with smart investors. We see ourselves as an
-                ecosystem, providing more than just funding.
+                It's a complete ecosystem for innovation. Not just a funding source. For visionaries, get capital and support. Access resources to make your plan real.
               </p>
               <p>
-                Our mission is to make turning bold ideas into reality easier.
-                We also help investors find promising opportunities. We believe
-                in a quality-first approach. Every project is carefully
-                reviewed. This benefits visionaries by placing them in a select
-                group. It helps investors find high-potential ventures.
+                Investors, find promising ventures. Discover where to invest wisely. We create open connections for funding.
               </p>
-              <p>
+              {/* <p>
                 Transparency is key to everything we do. We provide clear
                 connections and support. We offer mentorship and resources to
                 help projects succeed. Join our community dedicated to mutual
                 success. We are building the future of funding, together.
-              </p>
+              </p> */}
             </div>
           </motion.div>
 
@@ -64,7 +57,7 @@ export default function AboutPage() {
             <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-blue-500/10 rounded-full filter blur-3xl"></div>
             <div className="relative z-10 rounded-xl overflow-hidden border border-gray-800">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="./about/about.jpg"
                 alt="CapZ Team"
                 width={600}
                 height={400}
@@ -175,13 +168,13 @@ export default function AboutPage() {
               {
                 name: "Sarah Johnson",
                 role: "CEO & Co-Founder",
-                image: "/placeholder.svg?height=300&width=300",
+                image: "./about/sarah.jpg",
                 bio: "Former VP at Sequoia Capital with 15+ years in venture capital and startup advisory.",
               },
               {
                 name: "David Chen",
                 role: "CTO & Co-Founder",
-                image: "/placeholder.svg?height=300&width=300",
+                image: "./about/david.jpg",
                 bio: "Serial entrepreneur with two successful exits in the fintech and enterprise software spaces.",
               },
               {
