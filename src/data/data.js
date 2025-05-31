@@ -1,4 +1,18 @@
 import { Facebook, Twitter, Linkedin, Plus } from 'lucide-react';
+import { 
+  Brain, 
+  ShieldCheck, 
+  Sprout, 
+  HeartPulse,
+  Server,
+  Lock,
+  BarChart3,
+  CloudLock,
+  LineChart,
+  Leaf,
+  DollarSign, 
+  Activity
+} from 'lucide-react';
 export const featuredStartups = [
   {
     id: 1,
@@ -11,7 +25,7 @@ export const featuredStartups = [
   {
     id: 2,
     name: "CloudSecure",
-    logo: "/placeholder.svg?height=80&width=80",
+    logo: Brain,
     description: "Zero-trust security for cloud infrastructure",
     fundingStage: "Seed",
     raised: "$1.8M",
@@ -120,6 +134,31 @@ export const teamMembers = [
   },
   {
     id: 3,
+    name: "Md.Rakib Hossain",
+    role: "CMO",
+     image:
+      "./teams/Rakib Babu.png",
+    socialLinks: [
+      {
+        platform: "facebook",
+        url: "https://facebook.com/#",
+        color: "#1877F2"
+      },
+      {
+        platform: "twitter",
+        url: "https://twitter.com/#",
+        color: "#1DA1F2"
+      },
+      {
+        platform: "linkedin",
+        url: "https://linkedin.com/in/#",
+        color: "#0A66C2"
+      },
+      
+    ],
+  },
+  {
+    id: 4,
     name: "Md. Shohag Ahmed",
     role: "Lead Graphic Designer",
      image:
@@ -144,36 +183,11 @@ export const teamMembers = [
     ],
   },
   {
-    id: 4,
-    name: "Md.Shohrab Hossain",
-    role: "Software Engineer",
-     image:
-      "./teams/shohrab.png",
-    socialLinks: [
-      {
-        platform: "facebook",
-        url: "https://facebook.com/#",
-        color: "#1877F2"
-      },
-      {
-        platform: "twitter",
-        url: "https://twitter.com/#",
-        color: "#1DA1F2"
-      },
-      {
-        platform: "linkedin",
-        url: "https://linkedin.com/in/#",
-        color: "#0A66C2"
-      },
-      
-    ],
-  },
-  {
     id: 5,
     name: "Md. Habibbur Rahman",
     role: "Senior Digital Marketer",
      image:
-      "https://archive.org/download/placeholder-image/placeholder-image.jpg",
+      "./teams/habib.jpg",
     socialLinks: [
       {
         platform: "facebook",
@@ -194,11 +208,11 @@ export const teamMembers = [
     ],
   },
   {
-    id: 6,
-    name: "Md.Rakib Hossain",
-    role: "CMO",
+    id: 4,
+    name: "Md. Shohrab Hossain",
+    role: "Software Engineer",
      image:
-      "./teams/Rakib Babu.png",
+      "./teams/siam.jpg",
     socialLinks: [
       {
         platform: "facebook",
@@ -218,6 +232,8 @@ export const teamMembers = [
       
     ],
   },
+  
+  
   {
     id: 7,
     name: "Md. Aktarul Islam",
@@ -323,7 +339,7 @@ export const teamMembers = [
     name: "Md.Shohan Paiker",
     role: "Junior Graphic Designer",
      image:
-      "https://archive.org/download/placeholder-image/placeholder-image.jpg",
+       "./teams/Shohan.png",
     socialLinks: [
       {
         platform: "facebook",
@@ -348,7 +364,32 @@ export const teamMembers = [
     name: "KM. Imam Hossen Cishti",
     role: "Junior Digital Marketer",
      image:
-      "https://archive.org/download/placeholder-image/placeholder-image.jpg",
+       "./teams/imam.jpg",
+    socialLinks: [
+      {
+        platform: "facebook",
+        url: "https://facebook.com/#",
+        color: "#1877F2"
+      },
+      {
+        platform: "twitter",
+        url: "https://twitter.com/#",
+        color: "#1DA1F2"
+      },
+      {
+        platform: "linkedin",
+        url: "https://linkedin.com/in/#",
+        color: "#0A66C2"
+      },
+      
+    ],
+  },
+  {
+    id: 17,
+    name: "Md.Mukta",
+    role: "Junior Digital Marketer",
+     image:
+      "./teams/Mukta.png",
     socialLinks: [
       {
         platform: "facebook",
@@ -470,31 +511,7 @@ export const teamMembers = [
   },
  
   
-  {
-    id: 17,
-    name: "Md.Mukta",
-    role: "Junior Digital Marketer",
-     image:
-      "./teams/Mukta.png",
-    socialLinks: [
-      {
-        platform: "facebook",
-        url: "https://facebook.com/#",
-        color: "#1877F2"
-      },
-      {
-        platform: "twitter",
-        url: "https://twitter.com/#",
-        color: "#1DA1F2"
-      },
-      {
-        platform: "linkedin",
-        url: "https://linkedin.com/in/#",
-        color: "#0A66C2"
-      },
-      
-    ],
-  },
+  
    
   
   

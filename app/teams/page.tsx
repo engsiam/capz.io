@@ -6,17 +6,12 @@ const TeamSection = () => {
     <section className="py-16 px-4 bg-gray-750 mt-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <span className="text-indigo-600 font-medium">Team Members</span>
+          <span className="text-indigo-600 font-medium text-center">Team Members</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-2 mb-4 text-white">
             Meet Our Exceptional Team
           </h2>
-          <p className="max-w-3xl mx-auto text-white text-lg">
-            Get to know the talented individuals who make up our dedicated team
-            at capZ. Our experts bring a diverse range of skills and
-            experiences to the table, allowing us to provide innovative
-            solutions and exceptional service to our clients. Learn more about
-            the professionals who drive our success and your project's
-            excellence.
+          <p className="max-w-3xl mx-auto text-white text-xl">
+            Meet the brilliant team at capZ where diverse expertise meets innovative solutions. Our dedicated professionals ensure your project’s success with excellence and creativity.
           </p>
         </div>
 
