@@ -9,9 +9,9 @@ import Link from "next/link";
 const slides = [
   {
     title: "Trading Empowered",
-    subtitle: "Prop Desk Solution",
+    subtitle: "Desk Solution",
     description:
-      "Empower your trading success with a leading prop trading firm. Global support, innovative tools, and expert guidance to reach your full potential.",
+      "Empower your trading success with a leading trading firm. Global support, innovative tools, and expert guidance to reach your full potential.",
     videoUrl:
       "https://nextventures.fra1.cdn.digitaloceanspaces.com/new/products/fundednext-cube.m4v",
       bgColor:"bg-[#D9DDFE]"
@@ -33,7 +33,7 @@ export default function FlagshipSlider() {
   return (
     <div className="max-w-6xl mx-auto relative">
       <div className="flex items-center justify-between mb-8">
-        <h2 className="text-5xl font-bold">
+        <h2 className="text-2xl md:text-5xl font-bold">
           Our Flagship Products
         </h2>
         <div className="flex space-x-4">
@@ -70,10 +70,10 @@ export default function FlagshipSlider() {
                 </h3>
                 <p className="mb-6 text-black">{slide.description}</p>
                  <Link
-                href="/entrepreneurs/register"
+                href="/login"
                 className="cta-btn inline-flex items-center gap-2 px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 relative z-10"
               >
-                Enter our PropVerse
+                Enter our World
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
