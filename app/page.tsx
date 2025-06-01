@@ -19,6 +19,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import WhyChoseUs from "@/components/WhyChoseUs";
 import ProjectCard from "@/components/ProjectCard";
+import AboutCapZVideo from "@/components/AboutCapZVideo";
 
 // Register GSAP plugins
 if (typeof window !== "undefined") {
@@ -163,8 +164,9 @@ export default function Home() {
       {/* YouTube Video Section with Zoom Effect */}
       <VideoSection />
 
+
       {/* About Section */}
-    
+    <AboutCapZVideo />
 
       {/* How It Works Section */}
       <HomeStep />

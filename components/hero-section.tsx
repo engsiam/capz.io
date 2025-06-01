@@ -92,8 +92,14 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 z-0 transition-transform duration-[1500ms] ease-in-out"
         style={{
-          transform: `translateY(-${scrollY * maxSpeed}px)`, // Smooth vertical movement
-          willChange: "transform",
+          transform:
+            typeof window !== "undefined" && window.innerWidth >= 768
+              ? `translateY(-${scrollY * maxSpeed}px)`
+              : "none",
+          willChange:
+            typeof window !== "undefined" && window.innerWidth >= 768
+              ? "transform"
+              : "auto",
         }}
       >
         <Img
@@ -101,7 +107,7 @@ export default function HeroSection() {
           alt="Background"
           fill
           sizes="100vw"
-          priority 
+          priority
           className="object-cover"
         />
 
