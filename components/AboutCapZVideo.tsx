@@ -74,6 +74,7 @@ const AboutCapZVideo: React.FC = () => {
                 muted
                 playsInline
                 onMouseEnter={handleMouseEnter}
+                onTouchStart={handleMouseEnter}
                 src="https://res.cloudinary.com/davhgjfvj/video/upload/v1748441612/z_ktnfn9.mp4"
               />
             </div>
