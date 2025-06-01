@@ -6,6 +6,6 @@ export const siteConfig = {
   ogImage: "https://capz.com/og.jpg",
   links: {
     twitter: "https://twitter.com/capz",
-    github: "https://github.com/capz",
+    facebook: "https://www.facebook.com/capitalzeneration",
   },
 }
