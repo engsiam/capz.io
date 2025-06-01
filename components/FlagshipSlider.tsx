@@ -8,19 +8,19 @@ import Link from "next/link";
 
 const slides = [
   {
-    title: "FundedNext",
-    subtitle: "PROP TRADING SOLUTION",
+    title: "Trading Empowered",
+    subtitle: "Prop Desk Solution",
     description:
-      "A leading prop trading firm committed to empowering promising traders worldwide to achieve maximum trading success.",
+      "Empower your trading success with a leading prop trading firm. Global support, innovative tools, and expert guidance to reach your full potential.",
     videoUrl:
       "https://nextventures.fra1.cdn.digitaloceanspaces.com/new/products/fundednext-cube.m4v",
       bgColor:"bg-[#D9DDFE]"
   },
   {
-    title: "NextSlide",
-    subtitle: "INNOVATION PLATFORM",
+    title: "Lead Endeavor",
+    subtitle: "Empower Growth",
     description:
-      "Empowering your ideas and innovations through cutting-edge technology solutions.",
+      "Lead Endeavor represents our commitment to pioneering groundbreaking solutions that empower businesses and transform industries through innovation, technology, and strategic vision.",
     videoUrl:
       "https://nextventures.fra1.cdn.digitaloceanspaces.com/new/products/cube.m4v",
       bgColor:"bg-[#C9FCDC] "
@@ -34,7 +34,7 @@ export default function FlagshipSlider() {
     <div className="max-w-6xl mx-auto relative">
       <div className="flex items-center justify-between mb-8">
         <h2 className="text-5xl font-bold">
-          Explore our <br /> flagship products
+          Our Flagship Products
         </h2>
         <div className="flex space-x-4">
           <button

@@ -10,22 +10,22 @@ const slides = [
   {
     name: "Malaysia",
     video:
-      "https://nextventures.fra1.cdn.digitaloceanspaces.com/new/operations/kuala-lumpur.m4v",
+      "https://videos.pexels.com/video-files/19408915/19408915-hd_1920_1080_30fps.mp4",
   },
   {
     name: "Bangladesh",
     video:
-      "https://nextventures.fra1.cdn.digitaloceanspaces.com/new/operations/colombo.m4v",
+      "https://videos.pexels.com/video-files/1654216/1654216-hd_1920_1080_30fps.mp4",
   },
   {
     name: "Sri Lanka",
     video:
-      "https://nextventures.fra1.cdn.digitaloceanspaces.com/new/operations/dubai.m4v",
+      "https://videos.pexels.com/video-files/3063475/3063475-uhd_2560_1440_30fps.mp4",
   },
   {
     name: "Cyprus",
     video:
-      "https://nextventures.fra1.cdn.digitaloceanspaces.com/new/operations/cyprus.m4v",
+      "https://videos.pexels.com/video-files/857254/857254-hd_1920_1080_24fps.mp4",
   },
 ];
 
@@ -62,17 +62,17 @@ export default function GlobalOperations() {
   }, []);
 
   return (
-    <section className="max-w-6xl mx-auto bg-gray-800 text-white px-4 py-12 rounded-xl flex flex-col md:flex-row items-center justify-center gap-10">
+    <section className="max-w-6xl mx-auto bg-gray-700 dark:bg-gray-800 text-white px-4 py-12 rounded-xl flex flex-col md:flex-row items-center justify-center gap-10">
       {/* Left Content */}
       <div className="max-w-xl">
         <p className="uppercase text-sm tracking-widest text-blue-400 font-semibold">
           We Have
         </p>
-        <h1 className="text-4xl md:text-6xl font-bold mt-2 mb-4">
-          Global operations
+        <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-4">
+         Our Global Network
         </h1>
-        <p className="text-gray-300 text-base md:text-lg">
-          cpaZ is a team of 450 people from diverse backgrounds, operating
+        <p className=":text-white text-base md:text-lg">
+          capZ is a team of 450 people from diverse backgrounds, operating
           from 5 different countries, including UAE, Malaysia, Bangladesh, Sri
           Lanka & Cyprus.
         </p>
