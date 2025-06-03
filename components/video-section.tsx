@@ -45,7 +45,7 @@ export default function VideoSection() {
   return (
     <section className="py-24 px-4 relative bg-gradient-to-b from-black to-gray-900">
       <div className="max-w-6xl mx-auto">
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -58,7 +58,7 @@ export default function VideoSection() {
             Explore the world's largest Cpaz office and discover amazing
             retro treasures
           </p>
-        </motion.div>
+        </motion.div> */}
 
         <div
           ref={videoContainerRef}

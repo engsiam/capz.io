@@ -387,9 +387,9 @@ export default function Home() {
         </div>
       </section>
       {/* video Slider */}
-      <section className="py-24 px-4 relative bg-gradient-to-b from-transparent to-gray-900/40">
+      {/* <section className="py-24 px-4 relative bg-gradient-to-b from-transparent to-gray-900/40">
         <FlagshipSlider />
-      </section>
+      </section> */}
       {/* vertical Slider */}
       <section className="py-24 px-4 relative bg-gradient-to-b from-transparent to-gray-900/40">
         <VerticalVideoSlider />
