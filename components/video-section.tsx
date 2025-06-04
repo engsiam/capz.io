@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 export default function VideoSection() {
@@ -71,11 +69,11 @@ export default function VideoSection() {
           {/* Video with zoom effect */}
           <div className="absolute inset-0 z-0 transition-transform duration-100">
             <iframe
-            loading="lazy"
+              loading="lazy"
               width="100%"
               height="100%"
-              src="https://www.youtube.com/embed/LxpWWAdFSgs?si=z4hD75bomvkjInBC&autoplay=1&mute=1&loop=1&playlist=LxpWWAdFSgs&controls=0&showinfo=0&rel=0&enablejsapi=1"
-              title="I went to America's Largest Video Game Store"
+              src="https://www.youtube.com/embed/1gYZmRrszPc?si=zdBtP8zsUe9nFtz9&autoplay=1&mute=1&loop=1&playlist=1gYZmRrszPc&controls=0&showinfo=0&rel=0&enablejsapi=1"
+              title="I went to capZ Largest Largest Office"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture autoplay; picture-in-picture; web-share"
               allowFullScreen
