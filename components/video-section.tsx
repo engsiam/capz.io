@@ -80,37 +80,6 @@ export default function VideoSection() {
               className="absolute inset-0 w-full h-full object-cover"
             ></iframe>
           </div>
-
-          {/* Content overlay */}
-          <div className="absolute bottom-0 left-0 right-0 z-20 p-6 text-white">
-            {/* <h3 className="text-2xl font-bold mb-2">
-              I went to capZ Largest Office
-            </h3> */}
-            {/* <p className="text-gray-300 mb-4">
-              capZ • 579K views • 1 year ago
-            </p> */}
-            {/* <Link
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium hover:shadow-lg hover:shadow-cyan-500/20 transition-all"
-            >
-              Watch on YouTube
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                <path
-                  fillRule="evenodd"
-                  d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </Link> */}
-          </div>
         </div>
       </div>
     </section>
