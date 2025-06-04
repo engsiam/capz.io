@@ -73,7 +73,7 @@ export default function VideoSection() {
               width="100%"
               height="100%"
               src="https://www.youtube.com/embed/1gYZmRrszPc?si=zdBtP8zsUe9nFtz9&autoplay=1&mute=1&loop=1&playlist=1gYZmRrszPc&controls=0&showinfo=0&rel=0&enablejsapi=1"
-              title="I went to capZ Largest Largest Office"
+              // title="I went to capZ Largest Largest Office"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture autoplay; picture-in-picture; web-share"
               allowFullScreen
@@ -83,9 +83,9 @@ export default function VideoSection() {
 
           {/* Content overlay */}
           <div className="absolute bottom-0 left-0 right-0 z-20 p-6 text-white">
-            <h3 className="text-2xl font-bold mb-2">
+            {/* <h3 className="text-2xl font-bold mb-2">
               I went to capZ Largest Office
-            </h3>
+            </h3> */}
             {/* <p className="text-gray-300 mb-4">
               capZ • 579K views • 1 year ago
             </p> */}

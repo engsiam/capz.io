@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/context/theme-context";
 import type { Metadata } from "next";
 import type React from "react";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 
 export const metadata: Metadata = {
@@ -49,6 +50,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
