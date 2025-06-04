@@ -18,8 +18,8 @@ export function FeatureCard({ icon, title, description }: FeatureCardProps) {
       whileHover={{ y: -5, transition: { duration: 0.3 } }}
     >
       <div className="text-cyan-400 mb-4">{icon}</div>
-      <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="text-black dark:text-white">{description}</p>
+      <h3 className="text-xl font-bold mb-2 text-white">{title}</h3>
+      <p className="text-white">{description}</p>
     </motion.div>
   );
 }
