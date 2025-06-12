@@ -69,6 +69,7 @@ export default function VideoCollaps() {
           return (
             <SwiperSlide
               key={idx}
+              className="rounded-xl"
               onMouseOver={() => setActiveIndex(idx)}
               style={{
                 width,
