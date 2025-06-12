@@ -7,23 +7,27 @@ import { Swiper, SwiperSlide } from "swiper/react";
 const SLIDES = [
   {
     video:
-      "https://videos.pexels.com/video-files/5207408/5207408-hd_1920_1080_25fps.mp4",
+      "https://res.cloudinary.com/davhgjfvj/video/upload/v1749693435/C0385_fcpzbz.mp4",
   },
   {
     video:
-      "https://videos.pexels.com/video-files/29315509/12638980_1920_1080_25fps.mp4",
+      "https://res.cloudinary.com/davhgjfvj/video/upload/v1749693309/C0425_f4qi07.mp4",
   },
   {
     video:
-      "https://videos.pexels.com/video-files/7118947/7118947-uhd_2560_1440_30fps.mp4",
+      "https://res.cloudinary.com/davhgjfvj/video/upload/v1749693201/C0436_ewhiwz.mp4",
   },
   {
     video:
-      "https://videos.pexels.com/video-files/8188994/8188994-uhd_2560_1440_25fps.mp4",
+      "https://res.cloudinary.com/davhgjfvj/video/upload/v1749693020/C0372_swps8q.mp4",
   },
   {
     video:
-      "https://videos.pexels.com/video-files/26575058/11962638_1920_1080_24fps.mp4",
+      "https://res.cloudinary.com/davhgjfvj/video/upload/v1749693131/C0410_p4v6qe.mp4",
+  },
+  {
+    video:
+      "https://res.cloudinary.com/davhgjfvj/video/upload/v1749694604/C0396_v41zbe.mp4",
   },
 ];
 
@@ -50,9 +54,7 @@ export default function VideoCollaps() {
         <h2 className="text-5xl font-bold">
           Going global - <br /> engage & connect
         </h2>
-        <div className="flex space-x-4">
-          
-        </div>
+        <div className="flex space-x-4"></div>
       </div>
       <Swiper
         slidesPerView="auto"
@@ -75,7 +77,6 @@ export default function VideoCollaps() {
                 overflow: "hidden",
                 transition: "width 300ms ease",
               }}
-              
             >
               <video
                 ref={(el) => (videoRefs.current[idx] = el)}
@@ -94,7 +95,6 @@ export default function VideoCollaps() {
                   filter: isActive ? "none" : "brightness(0.6)",
                   transition: "filter 200ms",
                 }}
-                
                 /* 👇 Hover handlers for collapsed slides */
                 onMouseEnter={() => {
                   if (idx !== activeIndex && videoRefs.current[idx]) {
