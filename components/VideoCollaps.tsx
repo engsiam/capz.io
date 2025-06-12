@@ -64,7 +64,7 @@ export default function VideoCollaps() {
       >
         {SLIDES.map((slide, idx) => {
           const isActive = idx === activeIndex;
-          const width = isActive ? "60%" : "10%";
+          const width = isActive ? "52%" : "8%";
 
           return (
             <SwiperSlide
