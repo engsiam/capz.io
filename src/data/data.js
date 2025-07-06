@@ -151,7 +151,7 @@ export const teamMembers = [
   },
   {
     id: 2,
-    name: "Md.Farhad Hossain",
+    name: "Md. Farhad Hossain",
     role: "Co-founder & COO",
     image: "./teams/FarhadHossain.png",
     socialLinks: [
@@ -174,7 +174,7 @@ export const teamMembers = [
   },
   {
     id: 3,
-    name: "Md.Rakib Hossain",
+    name: "Md. Rakib Hossain",
     role: "CMO",
     image: "./teams/Rakib Babu.png",
     socialLinks: [
@@ -197,7 +197,7 @@ export const teamMembers = [
   },
   {
     id: 4,
-    name: "Md. Shohag Ahmed",
+    name: "Md.  Shohag Ahmed",
     role: "Lead Graphic Designer",
     image: "./teams/Shohag.png",
     socialLinks: [
@@ -220,7 +220,7 @@ export const teamMembers = [
   },
   {
     id: 5,
-    name: "Md. Habibbur Rahman",
+    name: "Md.  Habibbur Rahman",
     role: "Senior Digital Marketer",
     image: "./teams/habib.jpg",
     socialLinks: [
@@ -243,7 +243,7 @@ export const teamMembers = [
   },
   {
     id: 4,
-    name: "Md. Shohrab Hossain",
+    name: "Md.  Shohrab Hossain",
     role: "Software Engineer",
     image: "./teams/siam.jpg",
     socialLinks: [
@@ -267,7 +267,7 @@ export const teamMembers = [
 
   {
     id: 7,
-    name: "Md. Aktarul Islam",
+    name: "Md.  Aktarul Islam",
     role: "Branch Manager",
     image: "./teams/Aktarul.png",
     socialLinks: [
@@ -290,7 +290,7 @@ export const teamMembers = [
   },
   {
     id: 8,
-    name: "Md. Al Hasan",
+    name: "Md.  Al Hasan",
     role: "Social Media Manager",
     image: "./teams/hasan.png",
     socialLinks: [
@@ -311,32 +311,10 @@ export const teamMembers = [
       },
     ],
   },
-  {
-    id: 16,
-    name: "Hridoy Hashmi",
-    role: "Junior Digital Marketer",
-    image: "./teams/Hridoy.png",
-    socialLinks: [
-      {
-        platform: "facebook",
-        url: "https://facebook.com/#",
-        color: "#1877F2",
-      },
-      {
-        platform: "twitter",
-        url: "https://twitter.com/#",
-        color: "#1DA1F2",
-      },
-      {
-        platform: "linkedin",
-        url: "https://linkedin.com/in/#",
-        color: "#0A66C2",
-      },
-    ],
-  },
+
   {
     id: 9,
-    name: "Md. Rashed Khan Milon",
+    name: "Md.  Rashed Khan Milon",
     role: " Junior Digital Marketer",
     image: "./teams/Rashed Babu.png",
     socialLinks: [
@@ -359,7 +337,7 @@ export const teamMembers = [
   },
   {
     id: 10,
-    name: "Md.Shohan Paiker",
+    name: "Md. Shohan Paiker",
     role: "Junior Graphic Designer",
     image: "./teams/Shohan.png",
     socialLinks: [
@@ -405,7 +383,7 @@ export const teamMembers = [
   },
   {
     id: 17,
-    name: "Md.Mukta",
+    name: "Md. Mukta",
     role: "Junior Digital Marketer",
     image: "./teams/Mukta.png",
     socialLinks: [

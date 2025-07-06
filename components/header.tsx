@@ -135,7 +135,7 @@ export default function Header() {
 
             {/* Right side buttons (desktop) */}
             <div className="hidden md:flex items-center gap-4">
-              <ThemeToggle />
+              {/* <ThemeToggle /> */}
               <Link
                 href="/login"
                 className="text-md font-medium text-white hover:text-dark transition-colors px-4 py-2 border border-gray-800 rounded-full hover:border-cyan-500 dark:hover:text-white"
