@@ -130,7 +130,7 @@ export const teamMembers = [
     id: 1,
     name: "Mostafijur Rahman",
     role: "Founder & CEO",
-    image: "./teams/mdMithon.jpg",
+    image: "./teams/Mithon.jpg",
     socialLinks: [
       {
         platform: "facebook",
