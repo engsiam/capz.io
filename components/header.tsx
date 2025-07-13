@@ -152,7 +152,7 @@ export default function Header() {
 
             {/* Mobile Hamburger */}
             <div className="flex md:hidden items-center gap-4">
-              <ThemeToggle />
+              {/* <ThemeToggle /> */}
               <Link
                 href="/login"
                 className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
