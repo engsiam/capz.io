@@ -145,7 +145,7 @@ export default function Footer() {
                   />
                 </svg>
                 <span>
-                  0 N GOULD ST 41866 WY, Sheridan, WY, United States, 82801
+                  30 N GOULD ST 41866 WY, Sheridan, WY, United States, 82801
                 </span>
               </p>
             </div>
