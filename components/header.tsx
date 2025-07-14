@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import ThemeToggle from "./theme-toggle";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -135,7 +134,6 @@ export default function Header() {
 
             {/* Right side buttons (desktop) */}
             <div className="hidden md:flex items-center gap-4">
-              {/* <ThemeToggle /> */}
               <Link
                 href="/login"
                 className="text-md font-medium text-white hover:text-dark transition-colors px-4 py-2 border border-gray-800 rounded-full hover:border-cyan-500 dark:hover:text-white"
@@ -152,7 +150,6 @@ export default function Header() {
 
             {/* Mobile Hamburger */}
             <div className="flex md:hidden items-center gap-4">
-              {/* <ThemeToggle /> */}
               <Link
                 href="/login"
                 className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
@@ -271,3 +268,4 @@ export default function Header() {
     </header>
   );
 }
+
