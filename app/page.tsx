@@ -395,9 +395,9 @@ export default function Home() {
         <VerticalVideoSlider />
       </section>
       {/* video Slider collaps & expanded */}
-      <section className="py-24 px-4 relative bg-gradient-to-b from-transparent to-gray-900/40">
+      {/* <section className="py-24 px-4 relative bg-gradient-to-b from-transparent to-gray-900/40">
         <VideoCollaps />
-      </section>
+      </section> */}
       {/* Dual Call to Action */}
       <section ref={sectionRefs.cta} className="py-24 px-4 relative">
         <div className="max-w-6xl mx-auto">
