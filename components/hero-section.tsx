@@ -103,7 +103,7 @@ export default function HeroSection() {
         }}
       >
         <Img
-          src="https://res.cloudinary.com/davhgjfvj/image/upload/v1748688059/building_g7yisd.webp"
+          src="/slider/building.webp"
           alt="Background"
           fill
           sizes="100vw"
