@@ -381,75 +381,75 @@ export const teamMembers = [
       },
     ],
   },
-  {
-    id: 17,
-    name: "Md. Mukta",
-    role: "Junior Digital Marketer",
-    image: "./teams/Mukta.png",
-    socialLinks: [
-      {
-        platform: "facebook",
-        url: "https://facebook.com/#",
-        color: "#1877F2",
-      },
-      {
-        platform: "twitter",
-        url: "https://twitter.com/#",
-        color: "#1DA1F2",
-      },
-      {
-        platform: "linkedin",
-        url: "https://linkedin.com/in/#",
-        color: "#0A66C2",
-      },
-    ],
-  },
-  {
-    id: 12,
-    name: "Mst. Rupaly Khatun",
-    role: "Junior Digital Marketer,",
-    image: "./teams/Rupali.png",
-    socialLinks: [
-      {
-        platform: "facebook",
-        url: "https://facebook.com/#",
-        color: "#1877F2",
-      },
-      {
-        platform: "twitter",
-        url: "https://twitter.com/#",
-        color: "#1DA1F2",
-      },
-      {
-        platform: "linkedin",
-        url: "https://linkedin.com/in/#",
-        color: "#0A66C2",
-      },
-    ],
-  },
-  {
-    id: 13,
-    name: "Mst. Rumana Khatun",
-    role: "Junior Digital Marketer,",
-    image: "./teams/Rumana.png",
-    socialLinks: [
-      {
-        platform: "facebook",
-        url: "https://facebook.com/#",
-        color: "#1877F2",
-      },
-      {
-        platform: "twitter",
-        url: "https://twitter.com/#",
-        color: "#1DA1F2",
-      },
-      {
-        platform: "linkedin",
-        url: "https://linkedin.com/in/#",
-        color: "#0A66C2",
-      },
-    ],
-  },
+  // {
+  //   id: 17,
+  //   name: "Md. Mukta",
+  //   role: "Junior Digital Marketer",
+  //   image: "./teams/Mukta.png",
+  //   socialLinks: [
+  //     {
+  //       platform: "facebook",
+  //       url: "https://facebook.com/#",
+  //       color: "#1877F2",
+  //     },
+  //     {
+  //       platform: "twitter",
+  //       url: "https://twitter.com/#",
+  //       color: "#1DA1F2",
+  //     },
+  //     {
+  //       platform: "linkedin",
+  //       url: "https://linkedin.com/in/#",
+  //       color: "#0A66C2",
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: 12,
+  //   name: "Mst. Rupaly Khatun",
+  //   role: "Junior Digital Marketer,",
+  //   image: "./teams/Rupali.png",
+  //   socialLinks: [
+  //     {
+  //       platform: "facebook",
+  //       url: "https://facebook.com/#",
+  //       color: "#1877F2",
+  //     },
+  //     {
+  //       platform: "twitter",
+  //       url: "https://twitter.com/#",
+  //       color: "#1DA1F2",
+  //     },
+  //     {
+  //       platform: "linkedin",
+  //       url: "https://linkedin.com/in/#",
+  //       color: "#0A66C2",
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: 13,
+  //   name: "Mst. Rumana Khatun",
+  //   role: "Junior Digital Marketer,",
+  //   image: "./teams/Rumana.png",
+  //   socialLinks: [
+  //     {
+  //       platform: "facebook",
+  //       url: "https://facebook.com/#",
+  //       color: "#1877F2",
+  //     },
+  //     {
+  //       platform: "twitter",
+  //       url: "https://twitter.com/#",
+  //       color: "#1DA1F2",
+  //     },
+  //     {
+  //       platform: "linkedin",
+  //       url: "https://linkedin.com/in/#",
+  //       color: "#0A66C2",
+  //     },
+  //   ],
+  // },
   {
     id: 15,
     name: "Ahona Binte Zaman",
